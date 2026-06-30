@@ -243,7 +243,7 @@ header .navbar {
 
 /* Quando scrollar, a navbar ganha uma sombra um pouco mais destacada para flutuar sobre o Hero */
 header.scrolled .navbar {
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.08);
 }
 
 /* Garante que no modo escuro a navbar continue sólida e confortável */
