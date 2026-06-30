@@ -137,7 +137,7 @@ function executarEtapa() {
                     loadingScreen.style.display = "none";
                 }, 800); // 800ms é o tempo perfeito para a opacidade sumir suavemente
 
-            }, 600); // Tempo que ela fica estática em 100% antes de começar o fade
+            }, 1000); // Tempo que ela fica estática em 100% antes de começar o fade
         });
 
         return;

@@ -692,6 +692,99 @@ header.scrolled .navbar {
     transform: translateY(-2px);
 }
 
+/* ===================================================
+   ESTRUTURA COMPLETA ESTILO TOP SPOTIFY
+=================================================== */
+.spotify-section {
+    padding: 24px 16px;
+    background-color: #121212; /* O preto profundo clássico do Spotify */
+    border-radius: 16px;
+    margin: 24px auto;
+    max-width: 420px; /* Alinhado com o padrão dos seus containers anteriores */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.spotify-section h2 {
+    color: #ffffff !important;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-align: left;
+    letter-spacing: -0.5px;
+}
+
+.spotify-subtitle {
+    color: #a7a7a7;
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+    display: block;
+}
+
+.spotify-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.spotify-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+/* Efeito hover sutil ao passar o dedo ou o mouse */
+.spotify-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* O número do ranking à esquerda */
+.spotify-rank {
+    font-size: 15px;
+    font-weight: 700;
+    color: #a7a7a7;
+    width: 28px; /* Espaço fixado para o número não empurrar a foto */
+    text-align: left;
+}
+
+/* A capa do álbum (quadradinha com cantos levemente arredondados) */
+.spotify-cover {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 14px;
+    background-color: #282828; /* Fundo reserva caso a foto demore a carregar */
+}
+
+/* Bloco dos textos */
+.spotify-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow: hidden; /* Evita que textos muito longos quebrem o layout */
+}
+
+/* Nome da música/frase */
+.spotify-track {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Coloca os "..." se a frase for gigante */
+}
+
+/* Nome do artista/subtexto */
+.spotify-artist {
+    color: #a7a7a7;
+    font-size: 12px;
+}
+
 /* SEÇÃO SOBRE O PESQUISADOR */
 .about {
     background: var(--surface);
