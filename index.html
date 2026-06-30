@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instituto Arroche Rafael</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+
+    <script>
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+    }
+    </script>
+</head>
+
+<body>
+
+<div id="loading-screen">
+
+    <div class="loading-box">
+
+        <h1>🐱 Instituto Arroche Rafael</h1>
+
+        <p id="loading-text">
+            Inicializando Sistema...
+        </p>
+
+        <div class="progress">
+
+            <div id="progress-bar"></div>
+
+        </div>
+
+        <p id="percentage">0%</p>
+
+    </div>
+
+</div>
+
+    <header>
+
+    <nav class="navbar desktop-nav">
+
+        <a href="#" class="logo">
+
+             🐱 Instituto Arroche Rafael
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="#">Início</a></li>
+
+            <li><a href="#">Curiosidades</a></li>
+
+            <li><a href="#">Hall da Fama</a></li>
+
+            <li><a href="#">Pesquisador</a></li>
+
+            <li><a href="#">Atualizações</a></li>
+
+        </ul>
+
+        <div class="theme-area">
+
+            <input type="checkbox" class="checkbox" id="chk">
+
+            <label class="label" for="chk">
+
+                <img src="lua.png" class="fa-moon">
+
+                <img src="sol.png" class="fa-sun">
+
+                <div class="ball"></div>
+
+            </label>
+
+        </div>
+
+    </nav>
+
+
+    <nav class="navbar mobile-nav">
+
+        <button id="menuButton" class="menu-button">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <a href="#" class="logo-mobile">
+
+            🍇 Instituto Arroche Rafael
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<div class="menu-overlay" id="menuOverlay">
+
+    <aside class="side-menu" id="sideMenu">
+
+        <div class="menu-header">
+
+            <button id="closeMenuButton" class="close-menu-button">&times;</button>
+
+            <p>Pesquisadora Honorária detectada.</p>
+
+        </div>
+
+        <div class="menu-item theme-mobile">
+
+            <span>🌙 Tema</span>
+
+            <div>
+
+                <input type="checkbox" class="checkbox" id="chkMobile">
+
+                <label class="label" for="chkMobile">
+
+                    <img src="lua.png" class="fa-moon">
+
+                    <img src="sol.png" class="fa-sun">
+
+                    <div class="ball"></div>
+
+                </label>
+
+            </div>
+
+        </div>
+
+        <a href="#" class="menu-item">
+
+            🏠 Início
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+            🔬 Curiosidades
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+            🍇 Hall da Fama
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+            👨🏻‍🔬 Pesquisador
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+            📰 Atualizações
+
+        </a>
+
+        <div class="menu-footer">
+
+            Versão 1.0
+
+        </div>
+
+    </aside>
+
+</div>
+
+    <section class="hero">
+
+        <span class="status fade-in-element">
+            🟢 Instituto em funcionamento
+        </span>
+
+        <h1 class="fade-in-element">
+            <span class="line-1">Conhecimento opcional.</span>
+            <br>
+            <span class="line-2">Aleatoriedade obrigatória.</span>
+        </h1>
+
+        <p class="fade-in-element description">
+            Um pequeno lugar da internet onde curiosidades completamente
+            aleatórias são arquivadas para nunca mais serem esquecidas.
+        </p>
+
+        <div class="buttons fade-in-element">
+           <br>
+           <br>
+        </div>
+
+    </section>
+
+
+
+    <section class="cards">
+
+        <div class="card">
+
+            <h3>
+
+                🎮 Últimas Curiosidades do Pesquisador
+
+            </h3>
+
+            <p>
+
+                Butterfree continua sendo um dos Pokémon mais injustiçados da
+                história.
+
+            </p>
+
+            <button class="primary">
+
+                Ver mais
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+
+                🎵 Top 3 Atual
+
+            </h3>
+
+            <p>
+
+                Os pesquisadores ainda tentam entender por que vacas são tão
+                fofas.
+
+            </p>
+            
+            <p>
+                Última atualização: 30/06/2026
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+
+                🐋 Frase Marcante da Semana
+
+            </h3>
+
+            <p>
+
+                Ainda estou processando uma certa informação envolvendo baleias.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="hall">
+
+        <h2>
+
+            Por que criei esse site?
+
+        </h2>
+
+        <p>
+
+            Aqui estará o texto do porque quis criar esse site.
+
+        </p>
+
+        <div class="hall-card">
+
+            <span>
+
+                🍇
+
+            </span>
+
+            <h3>
+
+                Conheça nosso Hall da Fama
+
+            </h3>
+
+            <p>
+
+                Pesquisadora Honorária
+
+            </p>
+
+            <ul>
+
+                <li>Inventora oficial do "Arroche Rafael"</li>
+
+                <li>Responsável pelo trauma envolvendo baleias</li>
+
+                <li>Especialista em curiosidades aleatórias</li>
+
+                <li>Criadora do "Não TIM"</li>
+
+            </ul>
+            <button class="primary">
+
+                Ver mais
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="about">
+
+        <div>
+
+            <h2>
+
+                Sobre o Pesquisador
+
+            </h2>
+
+            <p>
+
+                Olá!
+
+                Sou Rafael.
+
+                Gosto de psicologia, Pokémon, crochê, violino,
+                curiosidades completamente inúteis e qualquer assunto
+                suficientemente interessante para virar uma conversa de
+                três horas.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="countdown">
+
+        <h2>
+
+            Próxima atualização
+
+        </h2>
+
+        <div id="timer">
+
+            00 : 00 : 00 : 00
+
+        </div>
+
+        <p>
+
+            Novas descobertas serão publicadas em breve.
+
+        </p>
+
+    </section>
+
+
+
+    <footer>
+
+        <h3>
+
+            Instituto Arroche Rafael
+
+        </h3>
+
+        <p>
+
+            Conhecimento opcional.
+            Aleatoriedade obrigatória.
+
+        </p>
+
+        <small>
+
+            Versão 1.0
+
+        </small>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

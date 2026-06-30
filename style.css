@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition:
+        background-color .45s ease,
+        color .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease,
+        transform .25s ease;
+}
+
+/* ================================
+   VARIÁVEIS
+================================ */
+:root {
+    --background: #F8F5EE;
+    --surface: #FFFFFF;
+    --primary: #C38B2C;
+    --primary-light: #E6C98A;
+    --secondary: #6F5330;
+    --text: #2E2A25;
+    --text-light: #7A7168;
+    --border: #E7DFD3;
+    --shadow: 0 18px 40px rgba(0, 0, 0, .08);
+}
+
+.dark {
+    --background: #111111;
+    --surface: #1D1D1D;
+    --primary: #8F1D2C;
+    --primary-light: #C6475E;
+    --secondary: #E7D9D9;
+    --text: #F4F4F4;
+    --text-light: #C7C7C7;
+    --border: #343434;
+    --shadow: 0 18px 40px rgba(0, 0, 0, .45);
+}
+
+.dark .label {
+    background-color: #c4c4c4;
+}
+
+/* Inverte a cor da bolinha para preto */
+.dark .label .ball {
+    background-color: #111111;
+}
+
+/*==========================
+LOADING
+==========================*/
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999; /* Fica acima de absolutamente tudo na inicialização */
+    transition: opacity 0.6s ease; 
+}
+
+
+.loading-box {
+    width: 420px;
+    text-align: center;
+}
+
+.loading-box h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+#loading-text {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.progress {
+    width: 100%;
+    height: 14px;
+    background: var(--border);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-light)
+    );
+    transition: .15s;
+}
+
+#percentage {
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+/* ===================================================
+   AJUSTE DE RESPONSIVIDADE PARA A TELA DE LOADING (CORRIGIDO)
+=================================================== */
+
+/* Aplicamos um padding de segurança nas laterais de toda a tela de loading */
+#loading-screen {
+    padding: 0 24px;
+}
+
+/* Aumentamos o limite para 480px para cobrir QUALQUER celular moderno */
+@media (max-width: 480px) {
+    .loading-box {
+        /* Ocupa quase toda a largura disponível, deixando as margens do padding */
+        width: 100% !important; 
+        max-width: 380px;
+        margin: 0 auto;
+    }
+}
+/* ===================================================
+   ZERA TOTALMENTE FUNDOS E BORDAS RESIDUAIS DO LOADING
+=================================================== */
+#loading-screen, 
+.loading-box,
+#loading-screen > div {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Mantém o fundo do loading-screen usando a sua variável padrão do site */
+#loading-screen {
+    background: var(--background) !important; 
+}
+/* ===================================================
+   DEIXA O TRILHO DA BARRA DE LOADING TRANSPARENTE
+=================================================== */
+.progress {
+    background: transparent !important;
+    box-shadow: none !important;
+    /* Adiciona uma borda bem fina e sutil se quiser ver onde a barra vai terminar, 
+       ou mude para 'border: none !important;' se quiser o visual 100% limpo */
+    border: 1px solid var(--border) !important; 
+}
+/* ================================
+   BODY
+================================ */
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    position: relative;
+    height: 38px;   
+    width: 75px;   
+}
+
+.label img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 30px;
+    width: 30px;
+    transform: translateX(0px);
+    transition: transform 0.4s linear;
+    z-index: 2;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(37px);
+}
+
+.fa-moon {
+    filter: invert(82%) sepia(54%) saturate(983%) hue-rotate(354deg) brightness(102%) contrast(92%);
+}
+
+.fa-sun {
+    filter: invert(67%) sepia(91%) saturate(1354%) hue-rotate(5deg) brightness(102%) contrast(92%);
+}
+
+/*==========================
+HEADER + NAVBAR
+==========================*/
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0; /* Um espaçamento fixo e elegante */
+    z-index: 1000;
+    
+    /* Remove o blur do container pai para eliminar o bug visual */
+    background: transparent;
+    transition: padding 0.3s ease;
+}
+
+/* Quando o usuário rola a página, apenas diminuímos um pouco o padding para dar efeito de compressão */
+header.scrolled {
+    padding: 10px 0;
+}
+
+/* Mantém o limite de largura do design da sua barra interna */
+header .navbar {
+    width: 94%;
+    max-width: 1350px;
+    background: var(--surface); /* Usa a cor de fundo sólida da sua variável */
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quando scrollar, a navbar ganha uma sombra um pouco mais destacada para flutuar sobre o Hero */
+header.scrolled .navbar {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Garante que no modo escuro a navbar continue sólida e confortável */
+.dark header .navbar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.dark header.scrolled .navbar {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.navbar {
+    height: 78px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .75);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+.dark .navbar {
+    background: rgba(20, 20, 20, .75);
+}
+
+.logo,
+.logo-mobile {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.logo:hover {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-area {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav {
+    display: flex;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media(max-width: 900px) {
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-nav {
+        display: flex;
+    }
+}
+
+.menu-button {
+    width: 46px;
+    height: 46px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.menu-button span {
+    width: 26px;
+    height: 3px;
+    background: var(--text);
+    border-radius: 50px;
+    transition: .35s;
+}
+
+/*===================================================
+   MENU MOBILE (OVERLAY E COMPONENTES INTRA-MENU)
+===================================================*/
+
+/* Força a sobreposição a ficar à frente de qualquer elemento fixo ou scrolled */
+.menu-overlay {
+    position: fixed !important;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .35s;
+    z-index: 99999 !important; /* Ganha do z-index de 1000 do header e afins */
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.side-menu {
+    width: 65%;
+    max-width: 340px;
+    height: 100%;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    padding: 35px;
+    transform: translateX(-100%);
+    transition: .45s cubic-bezier(.23, .9, .32, 1);
+    z-index: 100000 !important;
+}
+
+.menu-overlay.open .side-menu {
+    transform: translateX(0);
+}
+
+/* Ajuste do cabeçalho interno do menu lateral */
+.menu-header {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.menu-header p {
+    color: var(--text-light);
+    font-size: .9rem;
+}
+
+/* Estilização do botão X de fechar */
+.close-menu-button {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.close-menu-button:hover {
+    transform: scale(1.1);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.05rem;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.menu-item:hover {
+    color: var(--primary);
+    padding-left: 8px;
+}
+
+.menu-footer {
+    margin-top: 40px;
+    color: var(--text-light);
+    font-size: .9rem;
+}
+
+
+/* ===================================================
+   ELEMENTOS NOVOS DO HERO (ADICIONADOS EXCLUSIVAMENTE)
+=================================================== */
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at 50% 35%, rgba(195, 139, 44, 0.05), transparent 60%);
+}
+
+.dark .hero {
+    background: radial-gradient(circle at 50% 35%, rgba(143, 29, 44, 0.07), transparent 60%);
+}
+
+/* Tag de status acima do título */
+.hero .status {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    margin-bottom: 28px;
+}
+
+/* Título */
+.hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.8rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+.hero h1 .line-2 {
+    color: var(--primary);
+}
+
+/* Descrição */
+.hero .description {
+    max-width: 620px;
+    font-size: 1.18rem;
+    color: var(--text-light);
+    margin-bottom: 42px;
+}
+
+/* Animações em Cascata de Entrada */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero .status.fade-in-element { animation-delay: 0.7s; }
+.hero h1.fade-in-element { animation-delay: 1.0s; }
+.hero .description.fade-in-element { animation-delay: 1.3s; }
+
+@keyframes heroReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade específica do Hero */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+}
+
+/* ===================================================
+   ESTILIZAÇÃO DOS OUTROS ELEMENTOS DA PÁGINA PRINCIPAL
+=================================================== */
+
+/* SEÇÃO DE CARDS (CURIOSIDADES) */
+.cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.card p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Botão específico dos cards */
+.card button.primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.card button.primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* SEÇÃO HALL DA FAMA */
+.hall {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hall h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.hall > p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.hall-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.hall-card span {
+    font-size: 2.2rem;
+}
+
+.hall-card h3 {
+    font-size: 1.4rem;
+    color: var(--text);
+}
+
+.hall-card p {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.hall-card ul {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.hall-card ul li {
+    color: var(--text-light);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hall-card ul li::before {
+    content: "🍇";
+    font-size: 0.9rem;
+}
+
+.hall-card button.primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.hall-card button.primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* SEÇÃO SOBRE O PESQUISADOR */
+.about {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about div {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* SEÇÃO CRONÔMETRO (COUNTDOWN) */
+.countdown {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.countdown h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.countdown p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+}
+
+/* RODAPÉ (FOOTER) */
+footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+footer h3 {
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+footer p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+footer small {
+    color: var(--text-light);
+    opacity: 0.7;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
