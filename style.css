@@ -613,6 +613,16 @@ header.scrolled .navbar {
     margin-bottom: 40px;
 }
 
+
+.hall-image {
+    width: 150px;          /* Define uma largura fixa moderna para a foto */
+    height: 150px;         /* Define a mesma altura para garantir que fique quadrada */
+    object-fit: cover;     /* Corta a imagem perfeitamente sem distorcer ou esticar o rosto */
+    border-radius: 50%;    /* Deixa a foto 100% redonda e minimalista */
+    border: 3px solid var(--border); /* Adiciona uma borda sutil combinando com o site */
+    margin: 10px auto;     /* Garante que ela fique centralizada com um respiro em volta */
+}
+
 .hall-card {
     background: var(--surface);
     border: 1px solid var(--border);

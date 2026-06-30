@@ -53,20 +53,50 @@ const percentage = document.getElementById("percentage");
 const loadingScreen = document.getElementById("loading-screen");
 
 const roteiros = [
-    [
-        { texto: "Ligando computadores...", tempo: 1200 },
-        { texto: "Inicializando Instituto...", tempo: 1300 },
-        { texto: "Conectando ao Banco de Dados...", tempo: 900 },
-        { texto: "Consultando Arquivo...", tempo: 2200 },
-        { texto: "Buscando Pesquisadora...", tempo: 2600 }
-    ],
-    [
-        { texto: "Organizando Pokédex...", tempo: 1400 },
-        { texto: "Separando Butterfree...", tempo: 2000 },
-        { texto: "Consultando PC do Carvalho...", tempo: 1700 },
-        { texto: "Pesquisadora encontrada.", tempo: 1500 }
-    ]
+
+
+
+[
+
+{texto:"Ligando computadores...",tempo:1200},
+{texto:"Inicializando Instituto...",tempo:1300},
+{texto:"Conectando ao Banco de Dados...",tempo:900},
+{texto:"Consultando Arquivo das Baleias macho...",tempo:2200},
+{texto:"Analisando informações traumáticas...",tempo:1800},
+{texto:"Buscando Pesquisadora Honorária...",tempo:2600},
+{texto:"🍇 Maria Clara localizada.",tempo:1500}
+],
+
+[
+{texto:"Ligando computadores...",tempo:1200},
+{texto:"Organizando Pokédex...",tempo:1400},
+{texto:"Separando Butterfree dos Pokémon não-fofos...",tempo:2000},
+{texto:"Consultando PC do Dr. Carvalho...",tempo:1700},
+{texto:"Buscando especialista em curiosidades...",tempo:2600},
+{texto:"🍇 Pesquisadora Excepcional encontrada.",tempo:1500}
+],
+
+[
+{texto:"Ligando computadores...",tempo:1200},
+{texto:"Calculando quanto sobrou pro betinha...",tempo:1800},
+{texto:"Nenhum resultado encontrado.",tempo:1200},
+{texto:"Verificando autenticidade...",tempo:1700},
+{texto:"Consultando Arquivos Secretos...",tempo:2500},
+{texto:"🍇 Acesso concedido.",tempo:1600}
+],
+
+[
+{texto:"Ligando computadores...",tempo:1200},
+{texto:"Procurando animal mais tóxico do mundo...",tempo:2100},
+{texto:"Encontrado: 'Gato macho'",tempo:1500},
+{texto:"Concedendo acesso...",tempo:1800},
+{texto:"🍇 Pesquisadora Honorária localizada.",tempo:1700}
+]
+
+
 ];
+
+
 
 const roteiro = roteiros[Math.floor(Math.random() * roteiros.length)];
 
@@ -93,7 +123,7 @@ function executarEtapa() {
 
     if (etapa >= roteiro.length) {
 
-        loadingText.innerHTML = "✔ Sistema inicializado.";
+        loadingText.innerHTML = "✔ Instituto inicializado.<br><br>Bem-vinda novamente,<br><strong>Maria Clara 🍇</strong>";
 
         animarBarra(100, () => {
             // Pequena pausa com 100% visível para o usuário ver que terminou
