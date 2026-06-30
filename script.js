@@ -44,7 +44,7 @@ if (chkMobile) {
 
 
 // ===============================
-// LOADING SCREEN
+// LOADING SCREEN (MODIFICADO 🚀)
 // ===============================
 
 const loadingText = document.getElementById("loading-text");
@@ -53,50 +53,39 @@ const percentage = document.getElementById("percentage");
 const loadingScreen = document.getElementById("loading-screen");
 
 const roteiros = [
-
-
-
-[
-
-{texto:"Ligando computadores...",tempo:1200},
-{texto:"Inicializando Instituto...",tempo:1300},
-{texto:"Conectando ao Banco de Dados...",tempo:900},
-{texto:"Consultando Arquivo das Baleias macho...",tempo:2200},
-{texto:"Analisando informações traumáticas...",tempo:1800},
-{texto:"Buscando Pesquisadora Honorária...",tempo:2600},
-{texto:"🍇 Maria Clara localizada.",tempo:1500}
-],
-
-[
-{texto:"Ligando computadores...",tempo:1200},
-{texto:"Organizando Pokédex...",tempo:1400},
-{texto:"Separando Butterfree dos Pokémon não-fofos...",tempo:2000},
-{texto:"Consultando PC do Dr. Carvalho...",tempo:1700},
-{texto:"Buscando especialista em curiosidades...",tempo:2600},
-{texto:"🍇 Pesquisadora Excepcional encontrada.",tempo:1500}
-],
-
-[
-{texto:"Ligando computadores...",tempo:1200},
-{texto:"Calculando quanto sobrou pro betinha...",tempo:1800},
-{texto:"Nenhum resultado encontrado.",tempo:1200},
-{texto:"Verificando autenticidade...",tempo:1700},
-{texto:"Consultando Arquivos Secretos...",tempo:2500},
-{texto:"🍇 Acesso concedido.",tempo:1600}
-],
-
-[
-{texto:"Ligando computadores...",tempo:1200},
-{texto:"Procurando animal mais tóxico do mundo...",tempo:2100},
-{texto:"Encontrado: 'Gato macho'",tempo:1500},
-{texto:"Concedendo acesso...",tempo:1800},
-{texto:"🍇 Pesquisadora Honorária localizada.",tempo:1700}
-]
-
-
+    [
+        {texto:"Ligando computadores...",tempo:1200},
+        {texto:"Inicializando Instituto...",tempo:1300},
+        {texto:"Conectando ao Banco de Dados...",tempo:900},
+        {texto:"Consultando Arquivo das Baleias macho...",tempo:2200},
+        {texto:"Analisando informações traumáticas...",tempo:1800},
+        {texto:"Buscando Pesquisadora Honorária...",tempo:2600},
+        {texto:"🍇 Maria Clara localizada.",tempo:1500}
+    ],
+    [
+        {texto:"Ligando computadores...",tempo:1200},
+        {texto:"Organizando Pokédex...",tempo:1400},
+        {texto:"Separando Butterfree dos Pokémon não-fofos...",tempo:2000},
+        {texto:"Consultando PC do Dr. Carvalho...",tempo:1700},
+        {texto:"Buscando especialista em curiosidades...",tempo:2600},
+        {texto:"🍇 Pesquisadora Excepcional encontrada.",tempo:1500}
+    ],
+    [
+        {texto:"Ligando computadores...",tempo:1200},
+        {texto:"Calculando quanto sobrou pro betinha...",tempo:1800},
+        {texto:"Nenhum resultado encontrado.",tempo:1200},
+        {texto:"Verificando autenticidade...",tempo:1700},
+        {texto:"Consultando Arquivos Secretos...",tempo:2500},
+        {texto:"🍇 Acesso concedido.",tempo:1600}
+    ],
+    [
+        {texto:"Ligando computadores...",tempo:1200},
+        {texto:"Procurando animal mais tóxico do mundo...",tempo:2100},
+        {texto:"Encontrado: 'Gato macho'",tempo:1500},
+        {texto:"Concedendo acesso...",tempo:1800},
+        {texto:"🍇 Pesquisadora Honorária localizada.",tempo:1700}
+    ]
 ];
-
-
 
 const roteiro = roteiros[Math.floor(Math.random() * roteiros.length)];
 
@@ -113,37 +102,28 @@ function animarBarra(destino, callback) {
             callback();
         }
 
-        progressBar.style.width = progressoAtual + "%";
-        percentage.textContent = Math.floor(progressoAtual) + "%";
+        if (progressBar) progressBar.style.width = progressoAtual + "%";
+        if (percentage) percentage.textContent = Math.floor(progressoAtual) + "%";
 
     }, 25);
 }
 
 function executarEtapa() {
-
     if (etapa >= roteiro.length) {
-
-        loadingText.innerHTML = "✔ Instituto inicializado.<br><br>Bem-vinda novamente,<br><strong>Maria Clara 🍇</strong>";
+        if (loadingText) loadingText.innerHTML = "✔ Instituto inicializado.<br><br>Bem-vinda novamente,<br><strong>Maria Clara 🍇</strong>";
 
         animarBarra(100, () => {
-            // Pequena pausa com 100% visível para o usuário ver que terminou
             setTimeout(() => {
-                
-                // 1. Ativa a transição do CSS mudando a opacidade para 0
-                loadingScreen.style.opacity = "0";
-
-                // 2. Aguarda o tempo exato do fade terminar para dar o 'display: none'
+                if (loadingScreen) loadingScreen.style.opacity = "0";
                 setTimeout(() => {
-                    loadingScreen.style.display = "none";
-                }, 800); // 800ms é o tempo perfeito para a opacidade sumir suavemente
-
-            }, 1000); // Tempo que ela fica estática em 100% antes de começar o fade
+                    if (loadingScreen) loadingScreen.style.display = "none";
+                }, 800);
+            }, 1000);
         });
-
         return;
     }
 
-    loadingText.textContent = roteiro[etapa].texto;
+    if (loadingText) loadingText.textContent = roteiro[etapa].texto;
 
     let restante = 100 - progressoAtual;
     let destino = progressoAtual + restante / (roteiro.length - etapa);
@@ -168,7 +148,6 @@ const menuOverlay = document.getElementById("menuOverlay");
 function abrirMenu() {
     menuOverlay.classList.add("open");
     menuButton.classList.add("open");
-    // O header permanece visível por baixo do overlay sem sofrer alterações de display
 }
 
 function fecharMenu() {
@@ -176,7 +155,6 @@ function fecharMenu() {
     menuButton.classList.remove("open");
 }
 
-// Abrir menu nas três barras
 if (menuButton) {
     menuButton.addEventListener("click", () => {
         if (menuOverlay.classList.contains("open")) {
@@ -187,12 +165,10 @@ if (menuButton) {
     });
 }
 
-// Fechar menu no botão X
 if (closeMenuButton) {
     closeMenuButton.addEventListener("click", fecharMenu);
 }
 
-// Fechar clicando exatamente no fundo escuro do overlay
 if (menuOverlay) {
     menuOverlay.addEventListener("click", (e) => {
         if (e.target === menuOverlay) {
@@ -201,7 +177,6 @@ if (menuOverlay) {
     });
 }
 
-// Fechar ao clicar em um link comum, mas NÃO quando alternar o tema
 document.querySelectorAll(".menu-item").forEach(item => {
     item.addEventListener("click", (e) => {
         if (item.classList.contains("theme-mobile") || e.target.closest(".theme-mobile")) {
@@ -217,7 +192,6 @@ document.querySelectorAll(".menu-item").forEach(item => {
 // ===============================
 
 window.addEventListener("scroll", () => {
-    // Quando passar de 80px de scroll, adiciona a classe que fixa no topo
     if (window.scrollY > 80) {
         header.classList.add("scrolled");
     } else {
@@ -225,9 +199,17 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
 // ===============================
-// INICIAR LOADING
+// CONTROLE DE SESSÃO DO LOADING (NOVO ⚡)
 // ===============================
 
-executarEtapa();
+if (sessionStorage.getItem("loadingVisualizado")) {
+    // Se já entrou no site nessa sessão, some com a tela sem animação nenhuma
+    if (loadingScreen) {
+        loadingScreen.style.display = "none";
+    }
+} else {
+    // Se for o primeiro acesso da sessão, roda o roteiro e marca como visualizado
+    sessionStorage.setItem("loadingVisualizado", "true");
+    executarEtapa();
+}

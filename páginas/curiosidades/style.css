@@ -47,105 +47,7 @@
     background-color: #111111;
 }
 
-/*==========================
-LOADING
-==========================*/
-#loading-screen {
-    position: fixed;
-    inset: 0;
-    background: var(--background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999; /* Fica acima de absolutamente tudo na inicialização */
-    transition: opacity 0.6s ease; 
-}
 
-
-.loading-box {
-    width: 420px;
-    text-align: center;
-}
-
-.loading-box h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--primary);
-}
-
-#loading-text {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
-.progress {
-    width: 100%;
-    height: 14px;
-    background: var(--border);
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-#progress-bar {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--primary-light)
-    );
-    transition: .15s;
-}
-
-#percentage {
-    margin-top: 18px;
-    font-weight: 700;
-}
-
-/* ===================================================
-   AJUSTE DE RESPONSIVIDADE PARA A TELA DE LOADING (CORRIGIDO)
-=================================================== */
-
-/* Aplicamos um padding de segurança nas laterais de toda a tela de loading */
-#loading-screen {
-    padding: 0 24px;
-}
-
-/* Aumentamos o limite para 480px para cobrir QUALQUER celular moderno */
-@media (max-width: 480px) {
-    .loading-box {
-        /* Ocupa quase toda a largura disponível, deixando as margens do padding */
-        width: 100% !important; 
-        max-width: 380px;
-        margin: 0 auto;
-    }
-}
-/* ===================================================
-   ZERA TOTALMENTE FUNDOS E BORDAS RESIDUAIS DO LOADING
-=================================================== */
-#loading-screen, 
-.loading-box,
-#loading-screen > div {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-/* Mantém o fundo do loading-screen usando a sua variável padrão do site */
-#loading-screen {
-    background: var(--background) !important; 
-}
-/* ===================================================
-   DEIXA O TRILHO DA BARRA DE LOADING TRANSPARENTE
-=================================================== */
-.progress {
-    background: transparent !important;
-    box-shadow: none !important;
-    /* Adiciona uma borda bem fina e sutil se quiser ver onde a barra vai terminar, 
-       ou mude para 'border: none !important;' se quiser o visual 100% limpo */
-    border: 1px solid var(--border) !important; 
-}
 /* ================================
    BODY
 ================================ */
@@ -467,7 +369,8 @@ header.scrolled .navbar {
     text-align: center;
     
     /* 🛠️ Deixamos um padding um pouco menor no topo/base para respirar melhor */
-    padding: 60px 20px; 
+    padding: 60px 20px;
+        padding-bottom: 30px; 
     
     background: radial-gradient(circle at 50% 35%, rgba(195, 139, 44, 0.05), transparent 60%);
 }
@@ -536,17 +439,19 @@ header.scrolled .navbar {
     }
 }
 
-/* ===================================================
-   ESTILIZAÇÃO DOS OUTROS ELEMENTOS DA PÁGINA PRINCIPAL
-=================================================== */
-
 /* SEÇÃO DE CARDS (CURIOSIDADES) */
 .cards {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    /* 🛠️ O padding de 20px nas laterais garante que eles NUNCA colem na parede da tela */
+    padding: 40px 20px; 
+    
+    /* 🛠️ Mudamos para flex para os blocos irem se alinhando para a direita automaticamente */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Se não couber mais na linha, ele pula para a linha de baixo */
+    justify-content: center; /* Centraliza o grupo de blocos na tela */
     gap: 24px;
 }
 
@@ -559,252 +464,25 @@ header.scrolled .navbar {
     display: flex;
     flex-direction: column;
     gap: 15px;
-   /* 🛠️ APENAS MUDE ESSA LINHA PARA CENTER: */
     align-items: center; 
-    
-    /* 🛠️ E ADICIONE ESSA LINHA PARA CENTRALIZAR OS TEXTOS: */
     text-align: center;
-}
 
-.card:hover {
-    transform: translateY(-4px);
-}
-
-.card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text);
-}
-
-.card p {
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-
-/* 🛠️ Adicione "a.primary" separado por vírgula para aplicar o estilo em ambos! */
-button.primary, a.primary {
-    background-color: var(--primary-color, #b58228); /* Sua cor dourada/marrom original */
-    color: #ffffff; /* Cor do texto branca */
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    
-    /* 🛠️ Regras cruciais para que o link se comporte exatamente como um botão: */
-    display: inline-block;
-    text-decoration: none; /* Remove o sublinhado roxo chato de link */
-    text-align: center;
-}
-
-.dark button.primary, .dark a.primary {
-    background-color: var(--primary-color-dark, #8f1d2c); /* Ajuste para o modo escuro */
-    color: #ffffff;
-}
-
-/* Garanta que o efeito de passar o mouse (hover) funcione no link também */
-button.primary:hover, a.primary:hover {
-    filter: brightness(1.1); /* Ou o efeito de transição que você já tinha colocado */
-}
-/* SEÇÃO HALL DA FAMA */
-.hall {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.hall h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text);
-    margin-bottom: 15px;
-}
-
-.hall > p {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-}
-
-
-.hall-image {
-    width: 150px;          /* Define uma largura fixa moderna para a foto */
-    height: 150px;         /* Define a mesma altura para garantir que fique quadrada */
-    object-fit: cover;     /* Corta a imagem perfeitamente sem distorcer ou esticar o rosto */
-    border-radius: 50%;    /* Deixa a foto 100% redonda e minimalista */
-    border: 3px solid var(--border); /* Adiciona uma borda sutil combinando com o site */
-    margin: 10px auto;     /* Garante que ela fique centralizada com um respiro em volta */
-}
-
-.hall-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px 30px;
-    border-radius: 24px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.hall-card span {
-    font-size: 2.2rem;
-}
-
-.hall-card h3 {
-    font-size: 1.4rem;
-    color: var(--text);
-}
-
-.hall-card p {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.hall-card ul {
-    list-style: none;
-    text-align: left;
+    /* 🛠️ Deixa o bloco minimamente retangular no PC (340px) mas flexível para o celular (100%) */
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 15px 0;
+    max-width: 360px; 
+    min-height: 200px; /* Garante que ele mantenha uma altura mínima bonita */
+    
+    /* Evita que o card quebre o layout em telas muito pequenas */
+    box-sizing: border-box; 
 }
 
-.hall-card ul li {
-    color: var(--text-light);
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.image {
+width: 200px;          /* Define uma largura fixa moderna para a foto */
+height: 200px;         /* Define a mesma altura para garantir que fique quadrada */
+object-fit: cover;
+border-radius: 12px;   /* Bordas arredondadas para suavizar a imagem */
 }
 
-.hall-card ul li::before {
-    content: "🍇";
-    font-size: 0.9rem;
-}
-
-.hall-card button.primary {
-    background: var(--primary);
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 12px 28px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.hall-card button.primary:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
-}
-
-/* ===================================================
-   ESTRUTURA COMPLETA ESTILO TOP SPOTIFY
-=================================================== */
-.spotify-section {
-    padding: 24px 16px;
-    background-color: #121212; /* O preto profundo clássico do Spotify */
-    border-radius: 16px;
-    margin: 24px auto;
-    max-width: 420px; /* Alinhado com o padrão dos seus containers anteriores */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-    /* 🛠️ AS TRÊS LINHAS QUE VÃO CENTRALIZAR O BLOCO: */
-    margin: 24px auto !important; /* O 'auto' força o navegador a equilibrar os lados */
-    display: block;              /* Garante que ele se comporte como um bloco sólido */
-    clear: both;
-}
-
-.spotify-section h2 {
-    color: #ffffff !important;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    text-align: left;
-    letter-spacing: -0.5px;
-}
-
-.spotify-subtitle {
-    color: #a7a7a7;
-    font-size: 13px;
-    margin-bottom: 20px;
-    text-align: left;
-    display: block;
-}
-
-.spotify-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.spotify-item {
-    display: flex;
-    align-items: center;
-    padding: 8px 8px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-}
-
-/* Efeito hover sutil ao passar o dedo ou o mouse */
-.spotify-item:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-/* O número do ranking à esquerda */
-.spotify-rank {
-    font-size: 15px;
-    font-weight: 700;
-    color: #a7a7a7;
-    width: 28px; /* Espaço fixado para o número não empurrar a foto */
-    text-align: left;
-}
-
-/* A capa do álbum (quadradinha com cantos levemente arredondados) */
-.spotify-cover {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-right: 14px;
-    background-color: #282828; /* Fundo reserva caso a foto demore a carregar */
-}
-
-/* Bloco dos textos */
-.spotify-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    overflow: hidden; /* Evita que textos muito longos quebrem o layout */
-}
-
-/* Nome da música/frase */
-.spotify-track {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Coloca os "..." se a frase for gigante */
-}
-
-/* Nome do artista/subtexto */
-.spotify-artist {
-    color: #a7a7a7;
-    font-size: 12px;
-}
 
 /* SEÇÃO SOBRE O PESQUISADOR */
 .about {
@@ -834,34 +512,7 @@ button.primary:hover, a.primary:hover {
     white-space: pre-line;
 }
 
-/* SEÇÃO CRONÔMETRO (COUNTDOWN) */
-.countdown {
-    text-align: center;
-    padding: 80px 20px;
-}
 
-.countdown h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.3rem;
-    color: var(--text-light);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-#timer {
-    font-family: 'Inter', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-.countdown p {
-    color: var(--text-light);
-    font-size: 1.05rem;
-}
 
 /* RODAPÉ (FOOTER) */
 footer {

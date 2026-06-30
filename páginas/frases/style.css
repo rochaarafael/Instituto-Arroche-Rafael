@@ -458,17 +458,13 @@ header.scrolled .navbar {
 =================================================== */
 
 .hero {
-    /* 🛠️ Reduzi de 75vh para 50vh para não empurrar tudo tão longe nas telas grandes */
-    min-height: 50vh; 
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-    /* 🛠️ Deixamos um padding um pouco menor no topo/base para respirar melhor */
-    padding: 60px 20px; 
-    
+    padding: 60px 20px;
     background: radial-gradient(circle at 50% 35%, rgba(195, 139, 44, 0.05), transparent 60%);
 }
 
@@ -486,7 +482,7 @@ header.scrolled .navbar {
     font-weight: 600;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 /* Título */
@@ -559,11 +555,7 @@ header.scrolled .navbar {
     display: flex;
     flex-direction: column;
     gap: 15px;
-   /* 🛠️ APENAS MUDE ESSA LINHA PARA CENTER: */
-    align-items: center; 
-    
-    /* 🛠️ E ADICIONE ESSA LINHA PARA CENTRALIZAR OS TEXTOS: */
-    text-align: center;
+    align-items: flex-start;
 }
 
 .card:hover {
@@ -582,32 +574,24 @@ header.scrolled .navbar {
     line-height: 1.6;
 }
 
-
-/* 🛠️ Adicione "a.primary" separado por vírgula para aplicar o estilo em ambos! */
-button.primary, a.primary {
-    background-color: var(--primary-color, #b58228); /* Sua cor dourada/marrom original */
-    color: #ffffff; /* Cor do texto branca */
-    padding: 10px 20px;
-    border-radius: 8px;
+/* Botão específico dos cards */
+.card button.primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    font-weight: bold;
-    
-    /* 🛠️ Regras cruciais para que o link se comporte exatamente como um botão: */
-    display: inline-block;
-    text-decoration: none; /* Remove o sublinhado roxo chato de link */
-    text-align: center;
 }
 
-.dark button.primary, .dark a.primary {
-    background-color: var(--primary-color-dark, #8f1d2c); /* Ajuste para o modo escuro */
-    color: #ffffff;
+.card button.primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
 }
 
-/* Garanta que o efeito de passar o mouse (hover) funcione no link também */
-button.primary:hover, a.primary:hover {
-    filter: brightness(1.1); /* Ou o efeito de transição que você já tinha colocado */
-}
 /* SEÇÃO HALL DA FAMA */
 .hall {
     max-width: 1200px;
@@ -719,11 +703,6 @@ button.primary:hover, a.primary:hover {
     max-width: 420px; /* Alinhado com o padrão dos seus containers anteriores */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-    /* 🛠️ AS TRÊS LINHAS QUE VÃO CENTRALIZAR O BLOCO: */
-    margin: 24px auto !important; /* O 'auto' força o navegador a equilibrar os lados */
-    display: block;              /* Garante que ele se comporte como um bloco sólido */
-    clear: both;
 }
 
 .spotify-section h2 {
