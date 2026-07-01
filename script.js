@@ -60,7 +60,7 @@ const roteiros = [
         {texto:"Consultando Arquivo das Baleias macho...",tempo:2200},
         {texto:"Analisando informações traumáticas...",tempo:1800},
         {texto:"Buscando Pesquisadora Honorária...",tempo:2600},
-        {texto:"🍇 Maria Clara localizada.",tempo:1500}
+        {texto:"🫐 Maria Clara localizada.",tempo:1500}
     ],
     [
         {texto:"Ligando computadores...",tempo:1200},
@@ -68,7 +68,7 @@ const roteiros = [
         {texto:"Separando Butterfree dos Pokémon não-fofos...",tempo:2000},
         {texto:"Consultando PC do Dr. Carvalho...",tempo:1700},
         {texto:"Buscando especialista em curiosidades...",tempo:2600},
-        {texto:"🍇 Pesquisadora Excepcional encontrada.",tempo:1500}
+        {texto:"🫐 Pesquisadora Excepcional encontrada.",tempo:1500}
     ],
     [
         {texto:"Ligando computadores...",tempo:1200},
@@ -76,14 +76,14 @@ const roteiros = [
         {texto:"Nenhum resultado encontrado.",tempo:1200},
         {texto:"Verificando autenticidade...",tempo:1700},
         {texto:"Consultando Arquivos Secretos...",tempo:2500},
-        {texto:"🍇 Acesso concedido.",tempo:1600}
+        {texto:"🫐 Acesso concedido.",tempo:1600}
     ],
     [
         {texto:"Ligando computadores...",tempo:1200},
         {texto:"Procurando animal mais tóxico do mundo...",tempo:2100},
         {texto:"Encontrado: 'Gato macho'",tempo:1500},
         {texto:"Concedendo acesso...",tempo:1800},
-        {texto:"🍇 Pesquisadora Honorária localizada.",tempo:1700}
+        {texto:"🫐 Pesquisadora Honorária localizada.",tempo:1700}
     ]
 ];
 
@@ -110,7 +110,7 @@ function animarBarra(destino, callback) {
 
 function executarEtapa() {
     if (etapa >= roteiro.length) {
-        if (loadingText) loadingText.innerHTML = "✔ Instituto inicializado.<br><br>Bem-vinda novamente,<br><strong>Maria Clara 🍇</strong>";
+        if (loadingText) loadingText.innerHTML = "✔ Instituto inicializado.<br><br>Bem-vinda novamente,<br><strong>Maria Clara 🫐</strong>";
 
         animarBarra(100, () => {
             setTimeout(() => {

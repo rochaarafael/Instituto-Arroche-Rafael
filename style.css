@@ -687,7 +687,7 @@ button.primary:hover, a.primary:hover {
 }
 
 .hall-card ul li::before {
-    content: "🍇";
+    content: "🫐";
     font-size: 0.9rem;
 }
 
