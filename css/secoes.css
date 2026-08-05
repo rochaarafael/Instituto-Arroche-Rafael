@@ -1,0 +1,189 @@
+/* ======================================================
+   SEÇÕES DO INSTITUTO ARROCHE, RAFAEL
+   Countdown + Sobre + Footer
+====================================================== */
+
+
+
+/* ======================================================
+   COUNTDOWN
+====================================================== */
+
+
+.countdown {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+}
+
+
+
+.countdown h2 {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 1.3rem;
+
+    color: var(--text-light);
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+#timer {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 3.5rem;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.countdown p {
+
+    color: var(--text-light);
+
+    font-size: 1.05rem;
+
+}
+
+
+
+
+
+/* ======================================================
+   SOBRE O PESQUISADOR
+====================================================== */
+
+
+.about {
+
+    background: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+}
+
+
+
+.about div {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+}
+
+
+
+.about h2 {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 2.5rem;
+
+    color: var(--text);
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.about p {
+
+    color: var(--text-light);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    white-space: pre-line;
+
+}
+
+
+
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+
+footer {
+
+    background: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    align-items: center;
+
+}
+
+
+
+footer h3 {
+
+    font-size: 1.2rem;
+
+    color: var(--text);
+
+}
+
+
+
+footer p {
+
+    color: var(--text-light);
+
+    font-size: .95rem;
+
+}
+
+
+
+footer small {
+
+    color: var(--text-light);
+
+    opacity: .7;
+
+    font-size: .8rem;
+
+    margin-top: 10px;
+
+}

@@ -1,0 +1,220 @@
+/* ======================================================
+   LOADING DO INSTITUTO ARROCHE, RAFAEL
+   Tela de inicialização do sistema
+====================================================== */
+
+/* ======================================
+CONTROLE INICIAL DO LOADING
+Evita flash
+====================================== */
+
+/* ======================================
+CONTROLE INICIAL DO LOADING
+====================================== */
+
+#loading-screen {
+display:none;
+}
+
+html.mostrar-loading #loading-screen {
+display:flex;
+}
+
+
+#loading-screen {
+position: fixed;
+
+inset:0;
+
+background:var(--background);
+
+justify-content:center;
+
+align-items:center;
+
+padding:0 24px;
+
+z-index:999999;
+
+transition:opacity .6s ease;
+}
+
+#loading-screen.hide {
+opacity:0;
+pointer-events:none;
+}
+
+/* ======================================================
+   CONTAINER PRINCIPAL
+====================================================== */
+
+
+#loading-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: var(--background);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 0 24px;
+
+    z-index: 999999;
+
+    transition: opacity .6s ease;
+
+}
+
+
+/* ======================================
+   CONTROLE DE FLASH DO LOADING
+====================================== */
+
+#loading-screen.loading-hidden {
+
+    display: none;
+
+}
+
+
+
+
+/* ======================================================
+   CAIXA CENTRAL
+====================================================== */
+
+
+.loading-box {
+
+    width: 420px;
+
+    max-width: 100%;
+
+    text-align: center;
+
+}
+
+
+
+
+
+.loading-box h1 {
+
+    font-size: 2rem;
+
+    margin-bottom: 30px;
+
+    color: var(--primary);
+
+}
+
+
+
+
+
+/* ======================================================
+   TEXTO DE STATUS
+====================================================== */
+
+
+#loading-text {
+
+    margin-bottom: 20px;
+
+    font-size: 1.1rem;
+
+}
+
+
+
+
+
+/* ======================================================
+   BARRA DE PROGRESSO
+====================================================== */
+
+
+.progress {
+
+    width: 100%;
+
+    height: 14px;
+
+    background: transparent;
+
+    border:
+
+        1px solid var(--border);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+}
+
+
+
+
+
+#progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--primary),
+
+            var(--primary-light)
+
+        );
+
+    transition: width .15s ease;
+
+}
+
+
+
+
+
+#percentage {
+
+    margin-top: 18px;
+
+    font-weight: 700;
+
+}
+
+
+
+
+
+/* ======================================================
+   RESPONSIVIDADE DO LOADING
+====================================================== */
+
+
+@media(max-width:480px) {
+
+
+    .loading-box {
+
+        width: 100%;
+
+        max-width: 380px;
+
+    }
+
+
+}

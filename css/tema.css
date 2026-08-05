@@ -1,0 +1,68 @@
+/* ======================================================
+   TEMA DO INSTITUTO ARROCHE, RAFAEL
+   Variáveis de cores + modo escuro
+====================================================== */
+
+
+
+/* ======================================================
+   TEMA CLARO (PADRÃO)
+====================================================== */
+
+
+:root {
+
+    --background: #F8F5EE;
+
+    --surface: #FFFFFF;
+
+    --primary: #C38B2C;
+
+    --primary-light: #E6C98A;
+
+    --secondary: #6F5330;
+
+    --text: #2E2A25;
+
+    --text-light: #7A7168;
+
+    --border: #E7DFD3;
+
+    --shadow:
+
+        0 18px 40px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+/* ======================================================
+   TEMA ESCURO
+====================================================== */
+
+
+.dark {
+
+    --background: #111111;
+
+    --surface: #1D1D1D;
+
+    --primary: #8F1D2C;
+
+    --primary-light: #C6475E;
+
+    --secondary: #E7D9D9;
+
+    --text: #F4F4F4;
+
+    --text-light: #C7C7C7;
+
+    --border: #343434;
+
+    --shadow:
+
+        0 18px 40px rgba(0,0,0,.45);
+
+}

@@ -1,0 +1,493 @@
+/* ======================================================
+   COMPONENTES DO INSTITUTO ARROCHE, RAFAEL
+   Cards + Botões + Spotify + Hall da Fama
+====================================================== */
+
+
+
+/* ======================================================
+   CARDS GERAIS
+====================================================== */
+
+
+.cards {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 40px 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 24px;
+
+}
+
+
+
+.card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+
+.card:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+
+.card h3 {
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+}
+
+
+
+.card p {
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+}
+
+
+
+
+
+/* ======================================================
+   BOTÃO PRINCIPAL
+====================================================== */
+
+
+button.primary,
+a.primary {
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    transition:
+
+        background .3s ease,
+        transform .25s ease;
+
+}
+
+
+
+button.primary:hover,
+a.primary:hover {
+
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+
+
+/* ======================================================
+   HALL DA FAMA
+====================================================== */
+
+
+.hall {
+
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+}
+
+
+
+.hall h2 {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 2.5rem;
+
+    color: var(--text);
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.hall > p {
+
+    color: var(--text-light);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.hall-card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 40px 30px;
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+
+
+.hall-card span {
+
+    font-size: 2.2rem;
+
+}
+
+
+
+.hall-card h3 {
+
+    font-size: 1.4rem;
+
+    color: var(--text);
+
+}
+
+
+
+.hall-image {
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--border);
+
+    margin: 10px auto;
+
+}
+
+
+
+.hall-card p {
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    font-size: .95rem;
+
+}
+
+
+
+.hall-card ul {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 15px 0;
+
+    text-align: left;
+
+}
+
+
+
+.hall-card ul li {
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+
+.hall-card ul li::before {
+
+    content: "🫐";
+
+    font-size: .9rem;
+
+}
+
+
+
+.hall-card button.primary {
+
+    padding: 12px 28px;
+
+    border-radius: 10px;
+
+}
+
+
+
+.hall-card button.primary:hover {
+
+    background: var(--primary-light);
+
+}
+
+
+
+
+
+/* ======================================================
+   SPOTIFY TOP 5
+====================================================== */
+
+
+.spotify-section {
+
+    padding: 24px 16px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #181818,
+            #0d0d0d
+        );
+
+    border-radius: 16px;
+
+    margin: 24px auto;
+
+    max-width: 420px;
+
+    box-shadow:
+
+        0 8px 24px rgba(0,0,0,.5);
+
+}
+
+
+
+.spotify-section h2 {
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+
+    text-align: left;
+
+}
+
+
+
+.spotify-subtitle {
+
+    color: #a7a7a7;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+
+}
+
+
+
+.spotify-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+
+.spotify-item {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 8px;
+
+    border-radius: 6px;
+
+    transition: background .2s ease;
+
+}
+
+
+
+.spotify-item:hover {
+
+    background:
+
+        rgba(255,255,255,.08);
+
+}
+
+
+
+.spotify-rank {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #a7a7a7;
+
+    width: 28px;
+
+}
+
+
+
+.spotify-cover {
+
+    width: 48px;
+
+    height: 48px;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    margin-right: 14px;
+
+}
+
+
+
+.spotify-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+
+    overflow: hidden;
+
+}
+
+
+
+.spotify-track {
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+
+.spotify-artist {
+
+    color:#a7a7a7;
+
+    font-size:12px;
+
+}

@@ -1,0 +1,171 @@
+/* ======================================================
+   BASE DO INSTITUTO ARROCHE, RAFAEL
+   Reset + configurações globais
+====================================================== */
+
+
+/* ================================
+   RESET GLOBAL
+================================ */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition:
+        background-color .45s ease,
+        color .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease,
+        transform .25s ease;
+
+}
+
+
+
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+
+/* ================================
+   ELEMENTOS PADRÃO
+================================ */
+
+
+a {
+
+    color: inherit;
+
+}
+
+
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+
+ul {
+
+    list-style: none;
+
+}
+
+
+
+/* ================================
+   CONTAINERS PRINCIPAIS
+================================ */
+
+
+main {
+
+    width: 100%;
+     padding-top: 110px;
+
+}
+
+
+
+#navbar,
+#menu,
+#footer {
+
+    width: 100%;
+
+}
+
+
+
+/* ================================
+   SELEÇÃO DE TEXTO
+================================ */
+
+
+::selection {
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+}
+
+
+
+/* ================================
+   BARRA DE ROLAGEM
+================================ */
+
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+
+::-webkit-scrollbar-track {
+
+    background: var(--background);
+
+}
+
+
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary);
+
+    border-radius: 20px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary-light);
+
+}

@@ -1,0 +1,179 @@
+/* ======================================================
+   HERO DO INSTITUTO ARROCHE, RAFAEL
+   Seção inicial + animações
+====================================================== */
+
+
+
+/* ======================================================
+   ESTRUTURA PRINCIPAL
+====================================================== */
+
+
+.hero {
+
+    min-height: 50vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+
+    padding: 60px 20px;
+
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(195, 139, 44, 0.05),
+            transparent 60%
+        );
+
+}
+
+
+
+.dark .hero {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(143, 29, 44, 0.07),
+            transparent 60%
+        );
+
+}
+
+
+
+
+
+/* ======================================================
+   STATUS DO INSTITUTO
+====================================================== */
+
+
+.hero .status {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    font-size: .85rem;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    box-shadow:
+
+        0 4px 15px rgba(0,0,0,.02);
+
+    margin-bottom: 30px;
+
+}
+
+
+
+
+
+/* ======================================================
+   TÍTULO PRINCIPAL
+====================================================== */
+
+
+.hero h1 {
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 3.8rem;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.hero h1 .line-2 {
+
+    color: var(--primary);
+
+}
+
+
+
+
+
+/* ======================================================
+   DESCRIÇÃO
+====================================================== */
+
+
+.hero .description {
+
+    max-width: 620px;
+
+    font-size: 1.18rem;
+
+    color: var(--text-light);
+
+    margin-bottom: 42px;
+
+}
+
+
+
+
+
+/* ======================================================
+   ANIMAÇÕES DE ENTRADA
+====================================================== */
+
+
+/* ======================================================
+ANIMAÇÕES DE ENTRADA
+====================================================== */
+
+
+.fade-in-element {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+
+        opacity 1.2s cubic-bezier(.16,1,.3,1),
+
+        transform 1.2s cubic-bezier(.16,1,.3,1);
+
+}
+
+
+
+.fade-in-element.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+

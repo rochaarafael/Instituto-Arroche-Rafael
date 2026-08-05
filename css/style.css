@@ -1,0 +1,59 @@
+/* ======================================================
+   STYLE PRINCIPAL
+   Instituto Arroche, Rafael
+
+   Arquivo controlador de todos os estilos
+====================================================== */
+
+
+/* ================================
+   SISTEMA DE TEMA
+================================ */
+
+@import url("tema.css");
+
+
+
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+@import url("base.css");
+
+
+
+/* ================================
+   TELA DE LOADING
+================================ */
+
+@import url("loading.css");
+
+
+
+/* ================================
+   NAVEGAÇÃO
+================================ */
+
+@import url("navbar.css");
+
+@import url("menu.css");
+
+
+
+/* ================================
+   SEÇÕES PRINCIPAIS
+================================ */
+
+@import url("hero.css");
+
+@import url("componentes.css");
+
+@import url("secoes.css");
+
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@import url("responsivo.css");

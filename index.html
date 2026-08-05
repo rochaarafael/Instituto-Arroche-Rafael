@@ -3,37 +3,97 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Instituto Arroche, Rafael</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Instituto Arroche, Rafael</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
 
-    <script>
-    if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-    }
-    </script>
+<!-- ================================
+     CSS
+================================ -->
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<!-- ================================
+     FONTES
+================================ -->
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+
+
+
+<!-- ================================
+     EVITA FLASH DO TEMA
+================================ -->
+
+
+<script>
+
+if(localStorage.getItem("theme") === "dark"){
+
+    document.documentElement.classList.add("dark");
+
+}
+
+
+if (!sessionStorage.getItem("loadingVisualizado")) {
+
+    document.documentElement.classList.add(
+        "mostrar-loading"
+    );
+
+}
+
+</script>
+
+
+
 </head>
+
+
 
 <body>
 
-<div id="loading-screen">
+
+
+<!-- ================================
+     LOADING
+================================ -->
+
+
+<div id="loading-screen" class="loading-hidden">
+
 
     <div class="loading-box">
 
-        <h1>🐱 Instituto Arroche, Rafael</h1>
+
+        <h1>
+
+            🐱 Instituto Arroche, Rafael
+
+        </h1>
+
+
 
         <p id="loading-text">
+
             Inicializando Sistema...
+
         </p>
+
+
 
         <div class="progress">
 
@@ -41,414 +101,415 @@
 
         </div>
 
-        <p id="percentage">0%</p>
+
+
+        <p id="percentage">
+
+            0%
+
+        </p>
+
 
     </div>
 
-</div>
-
-    <header>
-
-    <nav class="navbar desktop-nav">
-
-        <a href="#" class="logo">
-
-             🐱 Instituto Arroche, Rafael
-
-        </a>
-
-        <ul class="nav-links">
-
-
-            <li><a href="páginas/curiosidades/curiosidades.html">Curiosidades sobre o Pesquisador</a></li>
-
-            <li><a href="#">Frases Marcantes</a></li>
-
-            <li><a href="#">Hall da Fama</a></li>
-
-            <li><a href="#">Atualizações</a></li>
-
-        </ul>
-
-        <div class="theme-area">
-
-            <input type="checkbox" class="checkbox" id="chk">
-
-            <label class="label" for="chk">
-
-                <img src="lua.png" class="fa-moon">
-
-                <img src="sol.png" class="fa-sun">
-
-                <div class="ball"></div>
-
-            </label>
-
-        </div>
-
-    </nav>
-
-
-    <nav class="navbar mobile-nav">
-
-        <button id="menuButton" class="menu-button">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-        <a href="#" class="logo-mobile">
-
-            🐱 Instituto Arroche, Rafael
-
-        </a>
-
-    </nav>
-
-</header>
-
-
-<div class="menu-overlay" id="menuOverlay">
-
-    <aside class="side-menu" id="sideMenu">
-
-        <div class="menu-header">
-
-            <button id="closeMenuButton" class="close-menu-button">&times;</button>
-
-            <p>Pesquisadora Honorária detectada.</p>
-
-        </div>
-
-        <div class="menu-item theme-mobile">
-
-            <span>🌙 Tema</span>
-
-            <div>
-
-                <input type="checkbox" class="checkbox" id="chkMobile">
-
-                <label class="label" for="chkMobile">
-
-                    <img src="lua.png" class="fa-moon">
-
-                    <img src="sol.png" class="fa-sun">
-
-                    <div class="ball"></div>
-
-                </label>
-
-            </div>
-
-        </div>
-
-    
-        <a href="páginas/curiosidades/curiosidades.html" class="menu-item">
-
-            🔬 Curiosidades sobre o Pesquisador 
-
-        </a>
-
-        <a href="páginas/frases/frases.html" class="menu-item">
-
-            🐋 Frases Marcantes
-
-
-        </a>
-
-        <a href="#" class="menu-item">
-
-            🏆 Hall da Fama
-
-        </a>
-
-
-        <a href="#" class="menu-item">
-
-            📰 Atualizações
-
-        </a>
-
-        <div class="menu-footer">
-
-            Versão 1.0
-
-        </div>
-
-    </aside>
 
 </div>
 
-    <section class="hero">
 
-        <span class="status fade-in-element">
-            🟢 Instituto em funcionamento
-        </span>
+<!-- ================================
+     COMPONENTES DINÂMICOS
+================================ -->
 
-        <h1 class="fade-in-element">
-            <span class="line-1">Conhecimento opcional.</span>
-            <br>
-            <span class="line-2">Aleatoriedade obrigatória.</span>
-        </h1>
 
-        <p class="fade-in-element description">
-            
-            Eis o puro suco da aleatoriedade, com curiosidades completamente inúteis e informações que não vão te ajudar em nada, mas que podem te entreter por alguns minutos.
-        </p>
+<div id="navbar"></div>
 
-        <div class="buttons fade-in-element">
-           <br>
-           <br>
-        </div>
 
-    </section>
+<div id="menu"></div>
 
-    <section class="countdown">
 
-        <h2>
+<!-- ================================
+     CONTEÚDO
+================================ -->
 
-            Próxima atualização
 
-        </h2>
+<main>
 
-        <div id="timer">
 
-            00 : 00 : 00 : 00
 
-        </div>
+<section class="hero">
 
-        <p>
 
-            Novas descobertas serão publicadas em breve (Timer ainda em construção)
+<span class="status fade-in-element">
 
-        </p>
+🟢 Instituto em funcionamento
 
-    </section>
+</span>
 
 
 
-    <section class="cards">
+<h1 class="fade-in-element">
 
-        <div class="card">
 
-            <h3>
+<span class="line-1">
 
-                🔬 Últimas Curiosidades sobre o Pesquisador
+Conhecimento opcional.
 
-            </h3>
+</span>
 
-            
-            <div class="card">
-                <h3>#011</h3>
-                <p>"Meus chocolates favoritos são aqueles que tem amendoim misturado."</p>
-                <br>
-            </div>
 
-            <div class="card">
-                <h3>#010</h3>
-                <p>"Sou fascinado por lasanha qualquer sabor que como até passar mal."</p>
-                <br>
-            </div>
+<br>
 
-    
-            <a class="primary" href="páginas/curiosidades/curiosidades.html" style="text-decoration: none; display: inline-block;">
-            Ver mais
-            </a>
 
-        </div>
+<span class="line-2">
 
+Aleatoriedade obrigatória.
 
-            <section class="spotify-section">
-             <h2>🎵 Meu Top 5 Mensal (Spotify)</h2>
-                <p class="spotify-subtitle">As mais ouvidas nos laboratórios do Instituto</p>
+</span>
 
-                <div class="spotify-list">
-             <div class="spotify-item">
-                <div class="spotify-rank">1</div>
-                <img src="Top 5/glimpse.jpg" alt="Capa" class="spotify-cover">
-                <div class="spotify-info">
-                    <span class="spotify-track">Glimpse of Us</span>
-                    <span class="spotify-artist">Joji</span>
-                 </div>
-             </div>
 
-                <div class="spotify-item">
-                    <div class="spotify-rank">2</div>
-                    <img src="Top 5/let.jpeg" alt="Capa" class="spotify-cover">
-                    <div class="spotify-info">
-                        <span class="spotify-track">Let You Break My Heart Again</span>
-                        <span class="spotify-artist">Laufey</span>
-                    </div>
-                </div>
-        
-                <div class="spotify-item">
-                    <div class="spotify-rank">3</div>
-                    <img src="Top 5/anjos.jpeg" alt="Capa" class="spotify-cover">
-                    <div class="spotify-info">
-                        <span class="spotify-track">Anjos</span>
-                        <span class="spotify-artist">Venere Vai Venus</span>
-                    </div>
-                </div>
+</h1>
 
-                <div class="spotify-item">
-                    <div class="spotify-rank">4</div>
-                    <img src="Top 5/baby.jpeg" alt="Capa" class="spotify-cover">
-                    <div class="spotify-info">
-                        <span class="spotify-track">Baby Why </span>
-                        <span class="spotify-artist">Sarah Cothran</span>
-                    </div>
-                </div>
 
-                <div class="spotify-item">
-                    <div class="spotify-rank">5</div>
-                    <img src="Top 5/heart.jpg" alt="Capa" class="spotify-cover">
-                    <div class="spotify-info">
-                        <span class="spotify-track">Heart to Heart</span>
-                        <span class="spotify-artist">Mac DeMarco</span>
-                    </div>
-                </div>
 
-                 </div>
-             </section>
+<p class="description fade-in-element">
 
+Eis o puro suco da aleatoriedade, com curiosidades completamente inúteis e informações que não vão te ajudar em nada, mas que podem te entreter por alguns minutos.
 
+</p>
 
-       <div class="card">
-            <h3>🐋 Frases Marcantes da Semana</h3>
-            
-              
 
-            <div class="card">
-                <p>"Tenho encarado uma jabuticabeira esbelta todos os dias e só de pensar em poder olhar de perto as jabuticabas dela de pertinho, meu coração já acelera" - Mr. Arroche, Rafael, 30/06/2026</p>
-            </div>  
-            <div class="card">
-                <p>"Não TIM" - Dra. Maria Clara, 27/06/2026</p>
-            </div>  
-            <a class="primary" href="páginas/frases/frases.html" style="text-decoration: none; display: inline-block;">
-            Ver mais
-            </a>
-        </div>
+</section>
 
-    </section>
 
+<section class="countdown">
 
 
-    <section class="hall">
+<h2>
 
-        <h2>
+Próxima atualização
 
-            Por que criei esse site?
+</h2>
 
-        </h2>
 
-        <p>
 
-            Com objetivo de agregar curiosidades sobre o Pesquisador Gatão em um único lugar e fazer especialmente para a Dra. Maria Clara, esse site foi criado com muito carinho e dedicação para que ela possa se divertir e se entreter com as informações mais aleatórias possíveis que são atualizadas semanalmente.
+<div id="timer">
 
-        </p>
+00 : 00 : 00 : 00
 
-        <div class="hall-card">
+</div>
 
-            <span>
+<p>
 
-                🏆
+Novas descobertas serão publicadas em breve.
 
-            </span>
+</p>
 
-            <h3>
 
-                Conheça nosso Hall da Fama
+</section>
 
-            </h3>
-            <img src="macut.jpeg" alt="Foto da maria Clara" class="hall-image">
-            <h4>
 
-                Dra. Maria Clara
-            </h4>
-            <p>
-                Pesquisadora Honorária
+<section class="cards">
 
-            </p>
 
-            <ul>
 
-                <li>Inventora oficial do "Arroche Rafael"</li>
+<div class="card">
 
-                <li>Mãos de fada ao cozinhar uma bela lasanha</li>
 
-                <li>Especialista em dizer honestidades</li>
+<h3>
 
-                <li>Usuária descompassada de "Não TIM"</li>
+🔬 Últimas Curiosidades sobre o Pesquisador
 
-            </ul>
-            <button class="primary">
+</h3>
 
-                Ver mais
-            </button>
 
-        </div>
 
-    </section>
+<div class="card">
 
 
+<h3>
 
-    <section class="about">
+#011
 
-        <div>
+</h3>
 
-            <h2>
 
-                Sobre o Pesquisador
+<p>
 
-            </h2>
+"Meus chocolates favoritos são aqueles que tem amendoim misturado."
 
-            <p>
+</p>
 
-                Olá!
-                Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
 
-                Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
-                Explorador decuriosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de (pelo menos) três horas.
+</div>
 
-            </p>
 
-        </div>
 
-    </section>
+<div class="card">
 
 
+<h3>
 
+#010
 
+</h3>
 
 
-    <footer>
+<p>
 
-        <h3>
+"Sou fascinado por lasanha qualquer sabor que como até passar mal."
 
-            Instituto Arroche, Rafael
+</p>
 
-        </h3>
 
-        <p>
+</div>
 
-            Conhecimento opcional.
-            Aleatoriedade obrigatória.
 
-        </p>
 
-        <small>
 
-            Versão 1.0
+<a class="primary" href="páginas/curiosidades/curiosidades.html">
 
-        </small>
+Ver mais
 
-    </footer>
+</a>
 
 
+</div>
 
-    <script src="script.js"></script>
+
+<section class="spotify-section">
+
+
+<h2>
+
+🎵 Meu Top 5 Mensal (Spotify)
+
+</h2>
+
+
+
+<p class="spotify-subtitle">
+
+As mais ouvidas nos laboratórios do Instituto
+
+</p>
+
+
+
+<div class="spotify-list">
+
+
+<!-- músicas inseridas aqui -->
+
+
+</div>
+
+
+</section>
+
+
+
+<div class="card">
+
+
+<h3>
+
+🐋 Frases Marcantes
+
+</h3>
+
+
+<div class="card">
+
+
+<p>
+
+"Tenho encarado uma jabuticabeira esbelta todos os dias e só de pensar em poder olhar de perto as jabuticabas dela de pertinho, meu coração já acelera" -
+Mr. Arroche, Rafael, 30/06/2026
+
+</p>
+
+
+</div>
+
+
+<div class="card">
+
+
+<p>
+
+"Não TIM" -
+Dra. Maria Clara, 27/06/2026
+
+</p>
+
+
+</div>
+
+
+
+<a class="primary" href="páginas/frases/frases.html">
+
+Ver mais
+
+</a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+<section class="hall">
+
+
+<h2>
+
+Por que criei esse site?
+
+</h2>
+
+
+<p>
+
+Com objetivo de agregar curiosidades sobre o Pesquisador Gatão em um único lugar e fazer especialmente para a Dra. Maria Clara, esse site foi criado com muito carinho e dedicação para que ela possa se divertir e se entreter com as informações mais aleatórias possíveis.
+
+</p>
+
+
+<div class="hall-card">
+
+
+<span>
+
+🏆
+
+</span>
+
+
+
+<h3>
+
+Conheça nosso Hall da Fama
+
+</h3>
+
+
+
+<img src="macut.jpeg" 
+alt="Foto da Maria Clara"
+class="hall-image">
+
+
+
+<h4>
+
+Dra. Maria Clara
+
+</h4>
+
+
+
+<p>
+
+Pesquisadora Honorária
+
+</p>
+
+
+
+<ul>
+
+<li>Inventora oficial do "Arroche Rafael"</li>
+
+<li>Mãos de fada ao cozinhar uma bela lasanha</li>
+
+<li>Especialista em dizer honestidades</li>
+
+<li>Usuária descompassada de "Não TIM"</li>
+
+</ul>
+
+
+
+<button class="primary">
+
+Ver mais
+
+</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+<section class="about">
+
+<h2>
+
+Sobre o Pesquisador
+
+</h2>
+
+
+
+<p>
+
+Olá!
+
+Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
+
+
+Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
+
+
+Explorador de curiosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de pelo menos três horas.
+
+</p>
+
+</section>
+
+</main>
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+
+<div id="footer"></div>
+
+<!-- ================================
+     JAVASCRIPT
+================================ -->
+
+
+<script src="js/config.js"></script>
+
+<script src="componentes/navbar.js"></script>
+
+<script src="componentes/menu.js"></script>
+
+<script src="componentes/footer.js"></script>
+
+<script src="componentes/layout.js"></script>
+
+<script src="js/tema.js"></script>
+
+<script src="js/header.js"></script>
+
+<script src="js/loading.js"></script>
+
+<script src="js/timer.js"></script>
+
+<script src="js/animacoes.js"></script>
+
+<script src="js/script.js"></script>
 
 </body>
 
