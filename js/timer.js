@@ -19,7 +19,7 @@ function iniciarTimer() {
     // Data alvo:
     // 10/08/2026 às 08:00:00
     const dataFinal = new Date(
-        "2026-08-10T08:00:00"
+        "2026-08-07T08:00:00"
     );
 
 
