@@ -99,7 +99,7 @@
     .cards {
 
         grid-template-columns: 1fr;
-
+        
         padding: 30px 20px;
 
     }

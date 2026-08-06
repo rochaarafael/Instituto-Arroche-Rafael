@@ -1,544 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ======================================================
+   FRASES
+   Instituto Arroche, Rafael
+====================================================== */
 
-    transition:
-        background-color .45s ease,
-        color .45s ease,
-        border-color .45s ease,
-        box-shadow .45s ease,
-        transform .25s ease;
+/* =====================================
+   IMPORTA TODO O ESTILO GLOBAL
+===================================== */
+
+@import url("../../css/style.css");
+
+/* =====================================
+   ESTILOS EXCLUSIVOS DA PÁGINA
+===================================== */
+
+/* Hero */
+
+.hero {
+    min-height: 40vh;
 }
 
-/* ================================
-   VARIÁVEIS
-================================ */
-:root {
-    --background: #F8F5EE;
-    --surface: #FFFFFF;
-    --primary: #C38B2C;
-    --primary-light: #E6C98A;
-    --secondary: #6F5330;
-    --text: #2E2A25;
-    --text-light: #7A7168;
-    --border: #E7DFD3;
-    --shadow: 0 18px 40px rgba(0, 0, 0, .08);
+/* Cards */
+
+#lista-frases {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.dark {
-    --background: #111111;
-    --surface: #1D1D1D;
-    --primary: #8F1D2C;
-    --primary-light: #C6475E;
-    --secondary: #E7D9D9;
-    --text: #F4F4F4;
-    --text-light: #C7C7C7;
-    --border: #343434;
-    --shadow: 0 18px 40px rgba(0, 0, 0, .45);
+/* Caso alguma frase tenha imagem */
+
+.card img {
+    margin-top: 18px;
+    border-radius: 12px;
 }
 
-.dark .label {
-    background-color: #c4c4c4;
-}
-
-/* Inverte a cor da bolinha para preto */
-.dark .label .ball {
-    background-color: #111111;
+.card-frase-interna {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    justify-content: center;
 }
 
 
-/* ================================
-   BODY
-================================ */
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--background);
-    color: var(--text);
+.frase-texto {
+    font-size: 1.1rem;
     line-height: 1.7;
 }
 
-.checkbox {
-    opacity: 0;
-    position: absolute;
-}
 
-.label {
-    background-color: #111;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 8px;
-    position: relative;
-    height: 38px;   
-    width: 75px;   
-}
-
-.label img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    z-index: 1;
-}
-
-.label .ball {
-    background-color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    height: 30px;
-    width: 30px;
-    transform: translateX(0px);
-    transition: transform 0.4s linear;
-    z-index: 2;
-}
-
-.checkbox:checked + .label .ball {
-    transform: translateX(37px);
-}
-
-.fa-moon {
-    filter: invert(82%) sepia(54%) saturate(983%) hue-rotate(354deg) brightness(102%) contrast(92%);
-}
-
-.fa-sun {
-    filter: invert(67%) sepia(91%) saturate(1354%) hue-rotate(5deg) brightness(102%) contrast(92%);
-}
-
-/*==========================
-HEADER + NAVBAR
-==========================*/
-
-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0; 
-    
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 15px 0; /* Um espaçamento fixo e elegante */
-    z-index: 1000;
-    
-    /* Remove o blur do container pai para eliminar o bug visual */
-    background: transparent;
-    transition: padding 0.3s ease;
-}
-
-/* Quando o usuário rola a página, apenas diminuímos um pouco o padding para dar efeito de compressão */
-header.scrolled {
-    padding: 10px 0;
-}
-
-/* Mantém o limite de largura do design da sua barra interna */
-header .navbar {
-    width: 94%;
-    max-width: 1350px;
-    background: var(--surface); /* Usa a cor de fundo sólida da sua variável */
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Quando scrollar, a navbar ganha uma sombra um pouco mais destacada para flutuar sobre o Hero */
-header.scrolled .navbar {
-    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.08);
-}
-
-/* Garante que no modo escuro a navbar continue sólida e confortável */
-.dark header .navbar {
-    background: var(--surface);
-    border: 1px solid var(--border);
-}
-
-.dark header.scrolled .navbar {
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-}
-
-
-
-.navbar {
-    height: 78px;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 22px;
-    background: rgba(255, 255, 255, .75);
-    backdrop-filter: blur(18px);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    width: 100%;
-}
-
-.dark .navbar {
-    background: rgba(20, 20, 20, .75);
-}
-
-.logo,
-.logo-mobile {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 1.2rem;
-    font-weight: 700;
-    transition: .3s;
-}
-
-.logo:hover {
-    color: var(--primary);
-}
-
-.nav-links {
-    display: flex;
-    gap: 38px;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 500;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: var(--text);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.theme-area {
-    display: flex;
-    align-items: center;
-}
-
-.desktop-nav {
-    display: flex;
-}
-
-.mobile-nav {
-    display: none;
-}
-
-@media(max-width: 900px) {
-    .desktop-nav {
-        display: none;
-    }
-    .mobile-nav {
-        display: flex;
-    }
-}
-
-.menu-button {
-    width: 46px;
-    height: 46px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-}
-
-.menu-button span {
-    width: 26px;
-    height: 3px;
-    background: var(--text);
-    border-radius: 50px;
-    transition: .35s;
-}
-
-/*===================================================
-   MENU MOBILE (OVERLAY E COMPONENTES INTRA-MENU)
-===================================================*/
-
-/* Força a sobreposição a ficar à frente de qualquer elemento fixo ou scrolled */
-.menu-overlay {
-    position: fixed !important;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(6px);
-    opacity: 0;
-    visibility: hidden;
-    transition: .35s;
-    z-index: 99999 !important; /* Ganha do z-index de 1000 do header e afins */
-}
-
-.menu-overlay.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.side-menu {
-    width: 65%;
-    max-width: 340px;
-    height: 100%;
-    background: var(--surface);
-    box-shadow: var(--shadow);
-    padding: 35px;
-    transform: translateX(-100%);
-    transition: .45s cubic-bezier(.23, .9, .32, 1);
-    z-index: 100000 !important;
-}
-
-.menu-overlay.open .side-menu {
-    transform: translateX(0);
-}
-
-/* Ajuste do cabeçalho interno do menu lateral */
-.menu-header {
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-}
-
-.menu-header p {
-    color: var(--text-light);
-    font-size: .9rem;
-}
-
-/* Estilização do botão X de fechar */
-.close-menu-button {
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    color: var(--primary);
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-    transition: transform 0.2s ease;
-}
-
-.close-menu-button:hover {
-    transform: scale(1.1);
-}
-
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 1.05rem;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.menu-item:hover {
-    color: var(--primary);
-    padding-left: 8px;
-}
-
-.menu-footer {
-    margin-top: 40px;
-    color: var(--text-light);
-    font-size: .9rem;
-}
-
-
-/* ===================================================
-   ELEMENTOS NOVOS DO HERO (ADICIONADOS EXCLUSIVAMENTE)
-=================================================== */
-
-.hero {
-    /* 🛠️ Reduzi de 75vh para 50vh para não empurrar tudo tão longe nas telas grandes */
-    min-height: 50vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    /* 🛠️ Deixamos um padding um pouco menor no topo/base para respirar melhor */
-    padding: 60px 20px;
-        padding-bottom: 30px; 
-    
-    background: radial-gradient(circle at 50% 35%, rgba(195, 139, 44, 0.05), transparent 60%);
-}
-
-.dark .hero {
-    background: radial-gradient(circle at 50% 35%, rgba(143, 29, 44, 0.07), transparent 60%);
-}
-
-/* Tag de status acima do título */
-.hero .status {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
+.frase-autor {
     font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-    margin-bottom: 30px;
-}
-
-/* Título */
-.hero h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: 3.8rem;
-    line-height: 1.15;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 24px;
-}
-
-.hero h1 .line-2 {
-    color: var(--primary);
-}
-
-/* Descrição */
-.hero .description {
-    max-width: 620px;
-    font-size: 1.18rem;
-    color: var(--text-light);
-    margin-bottom: 42px;
-}
-
-/* Animações em Cascata de Entrada */
-.fade-in-element {
-    opacity: 0;
-    transform: translateY(25px);
-    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.hero .status.fade-in-element { animation-delay: 0.7s; }
-.hero h1.fade-in-element { animation-delay: 1.0s; }
-.hero .description.fade-in-element { animation-delay: 1.3s; }
-
-@keyframes heroReveal {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsividade específica do Hero */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.6rem;
-    }
-}
-
-/* SEÇÃO DE CARDS (CURIOSIDADES) */
-.cards {
-    max-width: 1200px;
-    margin: 0 auto;
-    
-    /* 🛠️ O padding de 20px nas laterais garante que eles NUNCA colem na parede da tela */
-    padding: 40px 20px; 
-    
-    /* 🛠️ Mudamos para flex para os blocos irem se alinhando para a direita automaticamente */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Se não couber mais na linha, ele pula para a linha de baixo */
-    justify-content: center; /* Centraliza o grupo de blocos na tela */
-    gap: 24px;
-}
-
-.card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center; 
-    text-align: center;
-
-    /* 🛠️ Deixa o bloco minimamente retangular no PC (340px) mas flexível para o celular (100%) */
-    width: 100%;
-    max-width: 360px; 
-    min-height: 200px; /* Garante que ele mantenha uma altura mínima bonita */
-    
-    /* Evita que o card quebre o layout em telas muito pequenas */
-    box-sizing: border-box; 
-}
-
-.image {
-width: 200px;          /* Define uma largura fixa moderna para a foto */
-height: 200px;         /* Define a mesma altura para garantir que fique quadrada */
-object-fit: cover;
-border-radius: 12px;   /* Bordas arredondadas para suavizar a imagem */
-}
-
-
-/* SEÇÃO SOBRE O PESQUISADOR */
-.about {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.about div {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.about h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text);
-    margin-bottom: 20px;
-}
-
-.about p {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    white-space: pre-line;
-}
-
-
-
-/* RODAPÉ (FOOTER) */
-footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 40px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-footer h3 {
-    font-size: 1.2rem;
     color: var(--text);
 }
 
-footer p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
 
-footer small {
+.frase-data {
+    font-size: 0.85rem;
     color: var(--text-light);
-    opacity: 0.7;
-    font-size: 0.8rem;
-    margin-top: 10px;
+    opacity: .8;
 }

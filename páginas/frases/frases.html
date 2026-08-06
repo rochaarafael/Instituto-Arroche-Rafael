@@ -4,269 +4,184 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Instituto Arroche, Rafael</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Frases Marcantes | Instituto Arroche, Rafael</title>
+
+    <!-- ================================
+         CSS
+    ================================ -->
+
+    <link rel="stylesheet" href="../../css/style.css">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- ================================
+         FONTES
+    ================================ -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ================================
+         EVITA FLASH DO TEMA
+    ================================ -->
 
     <script>
-    if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-    }
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+
     </script>
+
 </head>
 
 <body>
 
+    <!-- ================================
+         COMPONENTES
+    ================================ -->
 
+    <div id="navbar"></div>
 
-    <header>
+    <div id="menu"></div>
 
-    <nav class="navbar desktop-nav">
+    <!-- ================================
+         CONTEÚDO
+    ================================ -->
 
-        <a href="../../index.html" class="logo">
+    <main>
 
-             🐱 Instituto Arroche, Rafael
+        <!-- HERO -->
 
-        </a>
+        <section class="hero">
 
-        <ul class="nav-links">
+            <span class="status fade-in-element">
 
+                🟢 Escolhendo melhores frases
 
-            <li><a href="../curiosidades/curiosidades.html">Curiosidades sobre o Pesquisador</a></li>
+            </span>
 
-            <li><a href="#">Frases Marcantes</a></li>
+            <h1 class="fade-in-element">
 
-            <li><a href="#">Hall da Fama</a></li>
+                <span class="line-1">
 
-            <li><a href="#">Atualizações</a></li>
+                    Frases Marcantes.
 
-        </ul>
+                </span>
 
-        <div class="theme-area">
+                <br>
 
-            <input type="checkbox" class="checkbox" id="chk">
+                <span class="line-2">
 
-            <label class="label" for="chk">
+                    Qualquer Lugar.
 
-                <img src="lua.png" class="fa-moon">
+                </span>
 
-                <img src="sol.png" class="fa-sun">
+            </h1>
 
-                <div class="ball"></div>
+            <p class="description fade-in-element">
 
-            </label>
-
-        </div>
-
-    </nav>
-
-
-    <nav class="navbar mobile-nav">
-
-        <button id="menuButton" class="menu-button">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-        <a href="../../index.html" class="logo-mobile">
-
-            🐱 Instituto Arroche, Rafael
-
-        </a>
-
-    </nav>
-
-</header>
-
-
-<div class="menu-overlay" id="menuOverlay">
-
-    <aside class="side-menu" id="sideMenu">
-
-        <div class="menu-header">
-
-            <button id="closeMenuButton" class="close-menu-button">&times;</button>
-
-            <p>Pesquisadora Honorária detectada.</p>
-
-        </div>
-
-        <div class="menu-item theme-mobile">
-
-            <span>🌙 Tema</span>
-
-            <div>
-
-                <input type="checkbox" class="checkbox" id="chkMobile">
-
-                <label class="label" for="chkMobile">
-
-                    <img src="lua.png" class="fa-moon">
-
-                    <img src="sol.png" class="fa-sun">
-
-                    <div class="ball"></div>
-
-                </label>
-
-            </div>
-
-        </div>
-
-    
-        <a href="../curiosidades/curiosidades.html" class="menu-item">
-
-            🔬 Curiosidades sobre o Pesquisador 
-
-        </a>
-
-        <a href="frases.html" class="menu-item">
-
-            🐋 Frases Marcantes
-
-
-        </a>
-
-        <a href="#" class="menu-item">
-
-            🏆 Hall da Fama
-
-        </a>
-
-
-        <a href="#" class="menu-item">
-
-            📰 Atualizações
-
-        </a>
-
-        <div class="menu-footer">
-
-            Versão 1.0
-
-        </div>
-
-    </aside>
-
-</div>
-
-    <section class="hero">
-
-        <span class="status fade-in-element">
-            🟢 Esolhendo melhores frases
-        </span>
-
-        <h1 class="fade-in-element">
-            <span class="line-1">Frases Marcantes.</span>
-            <br>
-            <span class="line-2">Qualquer Lugar.</span>
-        </h1>
-
-        <p class="fade-in-element description">
-            Uma singela página onde guardo as frases que me marcam no dia a dia.
-        </p>
-
-        <div class="buttons fade-in-element">
-           <br>
-           <br>
-        </div>
-
-    </section>
-
-    
-
-
-
-    <section class="cards">
-
-        <div class="card">
-
-             <div class="card-frase-interna">
-            
-                <p>"Tenho encarado uma jabuticabeira esbelta todos os dias e só de pensar em poder olhar de perto as jabuticabas dela de pertinho, meu coração já acelera" <br>-Mr. Arroche, Rafael, 30/06/2026"</p>
-            </div>  
-
-        </div>
-
-        <div class="card">
-
-             <div class="card-frase-interna">
-                <p>"Não TIM" <br>-Dra. Maria Clara, 27/06/2026</p>
-            
-            </div>  
-
-        </div>
-
-
-    </section>
-
-
-
-   
-
-
-
-    <section class="about">
-
-        <div>
-
-            <h2>
-                Sobre o Pesquisador
-            </h2>
-
-            <p>
-                Olá!
-                Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
-
-                Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
-                Explorador decuriosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de (pelo menos) três horas.
+                Uma singela página onde guardo as frases que me marcaram durante a vida.
 
             </p>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- FRASES -->
 
+        <section
+            class="cards"
+            id="lista-frases"
+        >
 
+            <!-- Gerado automaticamente -->
 
+        </section>
 
+        <!-- SOBRE -->
 
+        <section class="about">
 
-    <footer>
+            <h2>
 
-        <h3>
+                Sobre o Pesquisador
 
-            Instituto Arroche, Rafael
+            </h2>
 
-        </h3>
+            <p>
 
-        <p>
+Olá!
 
-            Conhecimento opcional.
-            Aleatoriedade obrigatória.
+Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
 
-        </p>
+Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
 
-        <small>
+Explorador de curiosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de pelo menos três horas.
 
-            Versão 1.0
+            </p>
 
-        </small>
+        </section>
 
-    </footer>
+    </main>
 
+    <!-- ================================
+         FOOTER
+    ================================ -->
 
+    <div id="footer"></div>
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================ -->
+
+    <!-- Configuração -->
+
+    <script src="../../js/config.js"></script>
+
+    <!-- Componentes -->
+
+    <script src="../../componentes/navbar.js"></script>
+
+    <script src="../../componentes/menu.js"></script>
+
+    <script src="../../componentes/footer.js"></script>
+
+    <script src="../../componentes/layout.js"></script>
+
+    <!-- Componentes de cards -->
+    <script src="../../js/componentes/card.js"></script>
+
+    <!-- Componentes de cards -->
+
+    <script src="../../js/home/cardfrases.js"></script>
+
+    <!-- Sistema -->
+
+    <script src="../../js/core.js"></script>
+
+    <script src="../../js/tema.js"></script>
+
+    <script src="../../js/header.js"></script>
+
+    <script src="../../js/paginas.js"></script>
+
+    <!-- Dados da página -->
+
+    <script src="dados.js"></script>
+
+    <!-- Lógica da página -->
 
     <script src="script.js"></script>
 

@@ -3,513 +3,440 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <title>
+        Instituto Arroche, Rafael
+    </title>
 
-<title>Instituto Arroche, Rafael</title>
+    <!-- ==========================================
+         CSS
+    =========================================== -->
 
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
+    <!-- ==========================================
+         FONTES
+    =========================================== -->
 
-<!-- ================================
-     CSS
-================================ -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap"
+        rel="stylesheet"
+    >
 
+    <!-- ==========================================
+         EVITA FLASH DO TEMA E DO LOADING
+    =========================================== -->
 
+    <script>
 
-<!-- ================================
-     FONTES
-================================ -->
+        if (localStorage.getItem("theme") === "dark") {
 
+            document.documentElement.classList.add("dark");
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+        }
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        if (!sessionStorage.getItem("loadingVisualizado")) {
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+            document.documentElement.classList.add("mostrar-loading");
 
+        }
 
-
-<!-- ================================
-     EVITA FLASH DO TEMA
-================================ -->
-
-
-<script>
-
-if(localStorage.getItem("theme") === "dark"){
-
-    document.documentElement.classList.add("dark");
-
-}
-
-
-if (!sessionStorage.getItem("loadingVisualizado")) {
-
-    document.documentElement.classList.add(
-        "mostrar-loading"
-    );
-
-}
-
-</script>
-
-
+    </script>
 
 </head>
 
-
-
 <body>
 
+    <!-- ==========================================
+         LOADING
+    =========================================== -->
 
+    <div
+        id="loading-screen"
+        class="loading-hidden"
+    >
 
-<!-- ================================
-     LOADING
-================================ -->
+        <div class="loading-box">
 
+            <h1>
 
-<div id="loading-screen" class="loading-hidden">
+                🐱 Instituto Arroche, Rafael
 
+            </h1>
 
-    <div class="loading-box">
+            <p id="loading-text">
 
+                Inicializando Sistema...
 
-        <h1>
+            </p>
 
-            🐱 Instituto Arroche, Rafael
+            <div class="progress">
 
-        </h1>
+                <div id="progress-bar"></div>
 
+            </div>
 
+            <p id="percentage">
 
-        <p id="loading-text">
+                0%
 
-            Inicializando Sistema...
-
-        </p>
-
-
-
-        <div class="progress">
-
-            <div id="progress-bar"></div>
+            </p>
 
         </div>
 
-
-
-        <p id="percentage">
-
-            0%
-
-        </p>
-
-
     </div>
 
+    <!-- ==========================================
+         COMPONENTES
+    =========================================== -->
 
-</div>
+    <div id="navbar"></div>
 
+    <div id="menu"></div>
 
-<!-- ================================
-     COMPONENTES DINÂMICOS
-================================ -->
+    <!-- ==========================================
+         CONTEÚDO
+    =========================================== -->
 
+    <main>
 
-<div id="navbar"></div>
+        <!-- HERO -->
 
+        <section class="hero">
 
-<div id="menu"></div>
+            <span class="status fade-in-element">
 
+                🟢 Instituto em funcionamento
 
-<!-- ================================
-     CONTEÚDO
-================================ -->
+            </span>
 
+            <h1 class="fade-in-element">
 
-<main>
+                <span class="line-1">
 
+                    Conhecimento opcional.
 
+                </span>
 
-<section class="hero">
+                <br>
 
+                <span class="line-2">
 
-<span class="status fade-in-element">
+                    Aleatoriedade obrigatória.
 
-🟢 Instituto em funcionamento
+                </span>
 
-</span>
+            </h1>
 
+            <p class="description fade-in-element">
 
+                Eis o puro suco da aleatoriedade, com curiosidades completamente inúteis e informações que não vão te ajudar em nada, mas que podem te entreter por alguns minutos.
 
-<h1 class="fade-in-element">
+            </p>
 
+        </section>
+                <!-- ==========================================
+             CONTAGEM REGRESSIVA
+        =========================================== -->
 
-<span class="line-1">
+        <section class="countdown">
 
-Conhecimento opcional.
+            <h2>
 
-</span>
+                Próxima atualização
 
+            </h2>
 
-<br>
+            <div id="timer">
 
+                00 : 00 : 00 : 00
 
-<span class="line-2">
+            </div>
 
-Aleatoriedade obrigatória.
+            <p>
 
-</span>
+                Novas descobertas serão publicadas em breve.
 
+            </p>
 
-</h1>
+        </section>
 
+        <!-- ==========================================
+             DESTAQUES
+        =========================================== -->
 
+        <section class="cards">
 
-<p class="description fade-in-element">
+            <!-- Últimas Curiosidades -->
 
-Eis o puro suco da aleatoriedade, com curiosidades completamente inúteis e informações que não vão te ajudar em nada, mas que podem te entreter por alguns minutos.
+            <div class="card">
 
-</p>
+                <h3>
 
+                    🔬 Últimas Curiosidades sobre o Pesquisador
 
-</section>
+                </h3>
 
+                <div id="card-curiosidades">
 
-<section class="countdown">
+                    <!-- Gerado automaticamente -->
 
+                </div>
 
-<h2>
+                <a
+                    class="primary"
+                    href="páginas/curiosidades/curiosidades.html"
+                >
 
-Próxima atualização
+                    Ver mais
 
-</h2>
+                </a>
 
+            </div>
 
+            <!-- Spotify -->
 
-<div id="timer">
+            <section class="spotify-section">
 
-00 : 00 : 00 : 00
+                <h2>
 
-</div>
+                    🎵 Meu Top 5 Mensal (Spotify)
 
-<p>
+                </h2>
 
-Novas descobertas serão publicadas em breve.
+                <p class="spotify-subtitle">
 
-</p>
+                    As mais ouvidas nos laboratórios do Instituto
 
+                </p>
 
-</section>
+                <div class="spotify-list">
 
+                </div>
 
-<section class="cards">
+            </section>
 
+            <!-- Frases -->
 
+            <div class="card">
 
-<div class="card">
+                <h3>
 
+                    🐋 Frases Marcantes
 
-<h3>
+                </h3>
 
-🔬 Últimas Curiosidades sobre o Pesquisador
+                <div id="card-frases">
 
-</h3>
+                    <!-- Gerado automaticamente -->
 
+                </div>
 
+                <a
+                    class="primary"
+                    href="páginas/frases/frases.html"
+                >
 
-<div class="card">
+                    Ver mais
 
+                </a>
 
-<h3>
+            </div>
 
-#011
+        </section>
+                <!-- ==========================================
+             HALL DA FAMA
+        =========================================== -->
 
-</h3>
+        <section class="hall">
 
+            <h2>
 
-<p>
+                Por que criei esse site?
 
-"Meus chocolates favoritos são aqueles que tem amendoim misturado."
+            </h2>
 
-</p>
+            <p>
 
+                Com objetivo de agregar curiosidades sobre o Pesquisador Gatão em um único lugar e fazer especialmente para a Dra. Maria Clara, esse site foi criado com muito carinho e dedicação para que ela possa se divertir e se entreter com as informações mais aleatórias possíveis.
 
-</div>
+            </p>
 
+            <div class="hall-card">
 
+                <span>
 
-<div class="card">
+                    🏆
 
+                </span>
 
-<h3>
+                <h3>
 
-#010
+                    Conheça nosso Hall da Fama
 
-</h3>
+                </h3>
 
+                <img
+                    src="macut.jpeg"
+                    alt="Foto da Maria Clara"
+                    class="hall-image"
+                >
 
-<p>
+                <h4>
 
-"Sou fascinado por lasanha qualquer sabor que como até passar mal."
+                    Dra. Maria Clara
 
-</p>
+                </h4>
 
+                <p>
 
-</div>
+                    Pesquisadora Honorária
 
+                </p>
 
+                <ul>
 
+                    <li>
 
-<a class="primary" href="páginas/curiosidades/curiosidades.html">
+                        Inventora oficial do "Arroche Rafael"
 
-Ver mais
+                    </li>
 
-</a>
+                    <li>
 
+                        Mãos de fada ao cozinhar uma bela lasanha
 
-</div>
+                    </li>
 
+                    <li>
 
-<section class="spotify-section">
+                        Especialista em dizer honestidades
 
+                    </li>
 
-<h2>
+                    <li>
 
-🎵 Meu Top 5 Mensal (Spotify)
+                        Usuária descompassada de "Não TIM"
 
-</h2>
+                    </li>
 
+                </ul>
 
+                <button class="primary">
 
-<p class="spotify-subtitle">
+                    Ver mais
 
-As mais ouvidas nos laboratórios do Instituto
+                </button>
 
-</p>
+            </div>
 
+        </section>
 
+        <!-- ==========================================
+             SOBRE O PESQUISADOR
+        =========================================== -->
 
-<div class="spotify-list">
+        <section class="about">
 
+            <h2>
 
-<!-- músicas inseridas aqui -->
+                Sobre o Pesquisador
 
+            </h2>
 
-</div>
+            <p>
 
+                Olá!
 
-</section>
+                Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
 
+                Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
 
+                Explorador de curiosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de pelo menos três horas.
 
-<div class="card">
+            </p>
 
+        </section>
 
-<h3>
+    </main>
 
-🐋 Frases Marcantes
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
 
-</h3>
+    <div id="footer"></div>
+        <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
 
+    <!-- Configuração -->
 
-<div class="card">
+    <script src="js/config.js"></script>
 
+    <!-- Núcleo -->
 
-<p>
+    <script src="js/core.js"></script>
 
-"Tenho encarado uma jabuticabeira esbelta todos os dias e só de pensar em poder olhar de perto as jabuticabas dela de pertinho, meu coração já acelera" -
-Mr. Arroche, Rafael, 30/06/2026
+    <!-- Componentes -->
 
-</p>
+    <script src="componentes/layout.js"></script>
 
+    <script src="componentes/navbar.js"></script>
 
-</div>
+    <script src="componentes/menu.js"></script>
 
+    <script src="componentes/footer.js"></script>
 
-<div class="card">
+    <!-- Sistema -->
 
+    <script src="js/tema.js"></script>
 
-<p>
+    <script src="js/header.js"></script>
 
-"Não TIM" -
-Dra. Maria Clara, 27/06/2026
+    <script src="js/loading.js"></script>
 
-</p>
+    <script src="js/timer.js"></script>
 
+    <script src="js/animacoes.js"></script>
 
-</div>
+    <!-- Componentes de cards -->
+    <script src="js/componentes/card.js"></script>
 
+    <!-- Base de dados -->
 
+    <script src="páginas/curiosidades/dados.js"></script>
 
-<a class="primary" href="páginas/frases/frases.html">
+    <script src="páginas/frases/dados.js"></script>
 
-Ver mais
+    <!-- Cards automáticos da Home -->
 
-</a>
+    <script src="js/home/cardcuriosidades.js"></script>
 
+    <script src="js/home/cardfrases.js"></script>
 
+    <!-- Script principal -->
 
-</div>
-
-
-
-</section>
-
-
-<section class="hall">
-
-
-<h2>
-
-Por que criei esse site?
-
-</h2>
-
-
-<p>
-
-Com objetivo de agregar curiosidades sobre o Pesquisador Gatão em um único lugar e fazer especialmente para a Dra. Maria Clara, esse site foi criado com muito carinho e dedicação para que ela possa se divertir e se entreter com as informações mais aleatórias possíveis.
-
-</p>
-
-
-<div class="hall-card">
-
-
-<span>
-
-🏆
-
-</span>
-
-
-
-<h3>
-
-Conheça nosso Hall da Fama
-
-</h3>
-
-
-
-<img src="macut.jpeg" 
-alt="Foto da Maria Clara"
-class="hall-image">
-
-
-
-<h4>
-
-Dra. Maria Clara
-
-</h4>
-
-
-
-<p>
-
-Pesquisadora Honorária
-
-</p>
-
-
-
-<ul>
-
-<li>Inventora oficial do "Arroche Rafael"</li>
-
-<li>Mãos de fada ao cozinhar uma bela lasanha</li>
-
-<li>Especialista em dizer honestidades</li>
-
-<li>Usuária descompassada de "Não TIM"</li>
-
-</ul>
-
-
-
-<button class="primary">
-
-Ver mais
-
-</button>
-
-
-
-</div>
-
-
-
-</section>
-
-
-<section class="about">
-
-<h2>
-
-Sobre o Pesquisador
-
-</h2>
-
-
-
-<p>
-
-Olá!
-
-Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
-
-
-Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
-
-
-Explorador de curiosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de pelo menos três horas.
-
-</p>
-
-</section>
-
-</main>
-
-<!-- ================================
-     FOOTER
-================================ -->
-
-
-<div id="footer"></div>
-
-<!-- ================================
-     JAVASCRIPT
-================================ -->
-
-
-<script src="js/config.js"></script>
-
-<script src="componentes/navbar.js"></script>
-
-<script src="componentes/menu.js"></script>
-
-<script src="componentes/footer.js"></script>
-
-<script src="componentes/layout.js"></script>
-
-<script src="js/tema.js"></script>
-
-<script src="js/header.js"></script>
-
-<script src="js/loading.js"></script>
-
-<script src="js/timer.js"></script>
-
-<script src="js/animacoes.js"></script>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
