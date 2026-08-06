@@ -1,136 +1,73 @@
 // ======================================================
 // SISTEMA DE CONTAGEM REGRESSIVA
 // Instituto Arroche, Rafael
-// Contador até próxima atualização
 // ======================================================
-
 
 function iniciarTimer() {
 
+    const diasElemento = document.getElementById("dias");
+    const horasElemento = document.getElementById("horas");
+    const minutosElemento = document.getElementById("minutos");
+    const segundosElemento = document.getElementById("segundos");
 
-    const timer = document.getElementById("timer");
+    if (
+        !diasElemento ||
+        !horasElemento ||
+        !minutosElemento ||
+        !segundosElemento
+    ) return;
 
-
-    if (!timer) return;
-
-
-
-
-    // Data alvo:
-    // 10/08/2026 às 08:00:00
-    const dataFinal = new Date(
-        "2026-08-07T08:00:00"
-    );
-
-
-
-
+    // Próxima atualização
+    const dataFinal = new Date("2026-08-07T08:00:00");
 
     function atualizarTimer() {
 
-
         const agora = new Date();
 
-
-        const diferenca =
-            dataFinal - agora;
-
-
-
-
-
-        // Quando chegar ao fim
+        const diferenca = dataFinal - agora;
 
         if (diferenca <= 0) {
 
-
-            timer.innerHTML =
-            `
-            00 : 00 : 00 : 00
-            `;
-
+            diasElemento.textContent = "00";
+            horasElemento.textContent = "00";
+            minutosElemento.textContent = "00";
+            segundosElemento.textContent = "00";
 
             return;
-
-
         }
 
-
-
-
-
         const dias = Math.floor(
-            diferenca /
-            (1000 * 60 * 60 * 24)
+            diferenca / (1000 * 60 * 60 * 24)
         );
 
-
-
         const horas = Math.floor(
-            (diferenca %
-            (1000 * 60 * 60 * 24)) /
+            (diferenca % (1000 * 60 * 60 * 24)) /
             (1000 * 60 * 60)
         );
 
-
-
         const minutos = Math.floor(
-            (diferenca %
-            (1000 * 60 * 60)) /
+            (diferenca % (1000 * 60 * 60)) /
             (1000 * 60)
         );
 
-
-
         const segundos = Math.floor(
-            (diferenca %
-            (1000 * 60)) /
+            (diferenca % (1000 * 60)) /
             1000
         );
 
-
-
-
-
-
-        timer.innerHTML =
-        `
-        ${formatar(dias)}
-        :
-        ${formatar(horas)}
-        :
-        ${formatar(minutos)}
-        :
-        ${formatar(segundos)}
-        `;
-
+        diasElemento.textContent = formatar(dias);
+        horasElemento.textContent = formatar(horas);
+        minutosElemento.textContent = formatar(minutos);
+        segundosElemento.textContent = formatar(segundos);
 
     }
-
-
-
-
 
     function formatar(numero) {
-
-
-        return String(numero)
-            .padStart(2, "0");
-
-
+        return String(numero).padStart(2, "0");
     }
-
-
-
-
 
     atualizarTimer();
 
-
-    setInterval(
-        atualizarTimer,
-        1000
-    );
-
+    setInterval(atualizarTimer, 1000);
 
 }
