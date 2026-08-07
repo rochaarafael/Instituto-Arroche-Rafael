@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderizarCardFrases();
 
+    renderizarMusica();
+
 });
 
 });

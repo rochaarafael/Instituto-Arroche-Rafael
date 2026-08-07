@@ -1,0 +1,315 @@
+/* ======================================================
+   OBRAS
+   Instituto Arroche, Rafael
+====================================================== */
+
+/* =====================================
+   IMPORTA TODO O ESTILO GLOBAL
+===================================== */
+
+@import url("../../css/style.css");
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+
+    min-height:40vh;
+
+}
+
+/* =====================================
+   ESTATÍSTICAS
+===================================== */
+
+.obras-info{
+
+    max-width:1200px;
+
+    margin:0 auto 60px;
+
+    padding: 0px 18px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.info-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.info-card h3{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    color:var(--text-light);
+
+}
+
+/* =====================================
+   CATÁLOGO
+===================================== */
+
+.catalogo{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    padding:0 22px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:24px;
+
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.catalogo .card{
+
+    background:transparent;
+
+    border:none;
+
+    box-shadow:none;
+
+    padding:0;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.25s ease;
+
+}
+
+.catalogo .card:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* =====================================
+CAPA
+===================================== */
+
+.obra-capa{
+
+    width:100%;
+
+    max-width:220px;
+
+    height:330px;
+
+    margin:0 auto;
+
+    border-radius:18px;
+
+    object-fit:cover;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+
+}
+
+/* =====================================
+   CONTEÚDO
+===================================== */
+
+.obra-conteudo{
+
+    padding:18px 8px 6px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.obra-conteudo h3{
+
+    font-size:1.25rem;
+
+    color:var(--text);
+
+    line-height:1.3;
+
+}
+
+.obra-genero{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   STATUS
+===================================== */
+
+.obra-status{
+
+    align-items:center;
+
+    margin-top:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:fit-content;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.status.assistido{
+
+    background:rgba(76,175,80,.15);
+
+    color:#43a047;
+
+}
+
+.status.pendente{
+
+    background:rgba(255,193,7,.18);
+
+    color:#d18b00;
+
+}
+
+.obra-status small{
+
+    color:var(--text-light);
+
+    font-size:.92rem;
+
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 900px) {
+
+    .catalogo{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:20px;
+
+    }
+
+    .obra-capa{
+
+        max-width:170px;
+
+        height:255px;
+
+    }
+
+}
+
+/* ---------- Celulares ---------- */
+
+@media(max-width:768px){
+
+    .catalogo{
+
+        grid-template-columns:repeat(2,1fr);
+
+        padding: 18px;
+
+        gap:18px;
+
+    }
+
+    .obra-capa{
+
+        max-width:150px;
+
+        height:225px;
+
+    }
+
+}
+
+/* ---------- Celulares pequenos ---------- */
+
+@media(max-width:480px){
+
+    .catalogo{
+
+        padding:14px;
+
+        gap:14px;
+
+    }
+
+    .obra-capa{
+
+        max-width:135px;
+
+        height:200px;
+
+    }
+
+}

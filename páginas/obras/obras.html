@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Obras | Instituto Arroche, Rafael</title>
+
+<!-- ================================
+     CSS
+================================ -->
+
+<link rel="stylesheet" href="../../css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- ================================
+     FONTES
+================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- ================================
+     EVITA FLASH DO TEMA
+================================ -->
+
+<script>
+
+    if (localStorage.getItem("theme") === "dark") {
+
+        document.documentElement.classList.add("dark");
+
+    }
+
+</script>
+
+</head>
+
+<body>
+
+<!-- ================================
+     COMPONENTES
+================================ -->
+
+<div id="navbar"></div>
+
+<div id="menu"></div>
+
+<!-- ================================
+     CONTEÚDO
+================================ -->
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <span class="status fade-in-element">
+
+            🎬 Atualizando catálogo
+
+        </span>
+
+        <h1 class="fade-in-element">
+
+            <span class="line-1">
+
+                Obras.
+
+            </span>
+
+            <br>
+
+            <span class="line-2">
+
+                Compartilhadas.
+
+            </span>
+
+        </h1>
+
+        <p class="description fade-in-element">
+
+            Um catálogo com todas as obras que já assistimos juntos e aquelas que ainda fazem parte da nossa lista.
+
+        </p>
+
+    </section>
+
+    <!-- ESTATÍSTICAS -->
+
+    <section class="obras-info">
+
+        <div class="info-card">
+
+            <h3 id="total-obras">0</h3>
+
+            <p>Obras</p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3 id="obras-assistidas">0</h3>
+
+            <p>Assistidas</p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3 id="obras-pendentes">0</h3>
+
+            <p>Na Lista</p>
+
+        </div>
+
+    </section>
+
+    <!-- CATÁLOGO -->
+
+    <section
+        class="catalogo"
+        id="lista-obras"
+    >
+
+        <!-- Gerado automaticamente -->
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="about">
+
+        <h2>
+
+            Sobre este Catálogo
+
+        </h2>
+
+        <p>
+
+            Algumas histórias ficam apenas na memória.
+            Outras merecem um lugar permanente no Instituto Arroche, Rafael.
+            Aqui estão registradas todas as obras que fizeram — ou ainda farão — parte da nossa história.
+
+        </p>
+
+    </section>
+
+</main>
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<div id="footer"></div>
+
+<!-- ================================
+     JAVASCRIPT
+================================ -->
+
+<!-- Configuração -->
+
+<script src="../../js/config.js"></script>
+
+<!-- Núcleo -->
+
+<script src="../../js/core.js"></script>
+
+<script src="../../js/paginas.js"></script>
+
+<!-- Componentes -->
+
+<script src="../../componentes/navbar.js"></script>
+
+<script src="../../componentes/menu.js"></script>
+
+<script src="../../componentes/footer.js"></script>
+
+<script src="../../componentes/layout.js"></script>
+
+<!-- Sistema -->
+
+<script src="../../js/tema.js"></script>
+
+<script src="../../js/header.js"></script>
+
+<script src="../../js/animacoes.js"></script>
+
+<!-- Dados -->
+
+<script src="dados.js"></script>
+
+<!-- Lógica -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -110,13 +110,13 @@ const PAGINAS = [
 
         id: "hall",
 
-        nome: "Hall da Fama",
+        nome: "Obras",
 
-        titulo: "Hall da Fama",
+        titulo: "Obras",
 
-        icone: "🏆",
+        icone: "🎥",
 
-        link: "páginas/hall/hall.html"
+        link: "páginas/obras/obras.html"
 
     },
 
@@ -131,7 +131,7 @@ const PAGINAS = [
 
         icone: "📰",
 
-        link: "páginas/atualizacoes/atualizacoes.html"
+        link: "páginas/atualizações/atualizações.html"
 
     }
 

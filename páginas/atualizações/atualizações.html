@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Frases Marcantes | Instituto Arroche, Rafael</title>
+    <title>Atualizações | Instituto Arroche, Rafael</title>
 
     <!-- ================================
          CSS
@@ -40,7 +40,9 @@
     <script>
 
         if (localStorage.getItem("theme") === "dark") {
+
             document.documentElement.classList.add("dark");
+
         }
 
     </script>
@@ -63,13 +65,11 @@
 
     <main>
 
-        <!-- HERO -->
-
         <section class="hero">
 
             <span class="status fade-in-element">
 
-                🟢 Escolhendo melhores frases
+                🟢 Registrando alterações
 
             </span>
 
@@ -77,7 +77,7 @@
 
                 <span class="line-1">
 
-                    Frases Marcantes.
+                    Atualizações.
 
                 </span>
 
@@ -85,7 +85,7 @@
 
                 <span class="line-2">
 
-                    Qualquer Lugar.
+                    ChangeLog.
 
                 </span>
 
@@ -93,40 +93,34 @@
 
             <p class="description fade-in-element">
 
-                Uma singela página onde guardo as frases que me marcaram durante a vida.
+                Registro oficial de todas as melhorias, correções e novidades adicionadas ao Instituto Arroche, Rafael.
 
             </p>
 
         </section>
 
-        <!-- FRASES -->
-
         <section
             class="cards"
-            id="lista-frases"
+            id="lista-atualizacoes"
         >
 
             <!-- Gerado automaticamente -->
 
         </section>
 
-        <!-- SOBRE -->
-
         <section class="about">
 
             <h2>
 
-                Sobre o Pesquisador
+                Sobre este Registro
 
             </h2>
 
             <p>
 
-Olá!
+                Toda modificação realizada no Instituto Arroche, Rafael é documentada nesta página.
 
-Sou Rafael, mais conhecido como Dr. Gatão ou Mr. Arroche, Rafael.
-Bacharelando de Psicologia, especializando em Pokémon, amante de violino e fascinado por bolo de cenoura com cobertura de chocolate.
-Explorador de curiosidades completamente inúteis e qualquer assunto suficientemente interessante para virar uma conversa de pelo menos três horas.
+                Aqui ficam registradas novas funcionalidades, melhorias de desempenho, correções de bugs e qualquer alteração importante feita durante o desenvolvimento do projeto.
 
             </p>
 
@@ -148,7 +142,13 @@ Explorador de curiosidades completamente inúteis e qualquer assunto suficientem
 
     <script src="../../js/config.js"></script>
 
-    <!-- Componentes -->
+    <!-- Núcleo -->
+
+    <script src="../../js/core.js"></script>
+
+    <script src="../../js/paginas.js"></script>
+
+    <!-- Componentes do layout -->
 
     <script src="../../componentes/navbar.js"></script>
 
@@ -158,31 +158,22 @@ Explorador de curiosidades completamente inúteis e qualquer assunto suficientem
 
     <script src="../../componentes/layout.js"></script>
 
-    <!-- Componentes de cards -->
-    <script src="../../js/componentes/card.js"></script>
-
-    <!-- Componentes de cards -->
-
-    <script src="../../js/home/cardfrases.js"></script>
-
     <!-- Sistema -->
-
-    <script src="../../js/core.js"></script>
 
     <script src="../../js/tema.js"></script>
 
     <script src="../../js/header.js"></script>
 
-    <script src="../../js/paginas.js"></script>
+    <script src="../../js/animacoes.js"></script>
 
-    <!-- Dados da página -->
+    <!-- Dados -->
 
     <script src="dados.js"></script>
 
-    <!-- Lógica da página -->
+    <!-- Lógica -->
 
     <script src="script.js"></script>
 
 </body>
-    
+
 </html>
