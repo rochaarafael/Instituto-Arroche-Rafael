@@ -6,24 +6,24 @@
 window.musica = {
 
     titulo:
-        "Heather",
+        "her",
 
     artista:
-        "Conan Gray",
+        "JVKE",
 
     album:
-        "Kid Krow",
+        "her",
 
     capa:
         "her.jpeg",
 
     mensagem:
-        "Essa música sempre me faz lembrar você.",
+        "Essa música me faz lembrar você.",
 
     data:
-        "06/08/2026",
+        "04/08/2026",
 
     spotify:
-        "https://open.spotify.com/track/4xqrdfXkTW4T0RauPLv3WA"
+        "https://open.spotify.com/intl-pt/track/6G9YlbU3ByPJQvOFDRdwyM?si=43e70b416b6c4941"
 
 };

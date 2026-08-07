@@ -12,7 +12,7 @@ const CONFIG = {
 
     pesquisadora: "Maria Clara",
 
-    versao: "1.0"
+    versao: "1.0.0",
 
 
 };

@@ -5,6 +5,18 @@
 
 window.frases = [
 
+        {
+        texto:
+            `Boa noite, meu amor.`,
+
+        autor:
+            "Dra. Maria Clara",
+
+        data:
+            "05/08/2026"
+    },
+
+
     {
         texto:
             `Tenho encarado uma jabuticabeira esbelta todos os dias e só de pensar em poder olhar de perto as jabuticabas dela, meu coração já acelera.`,
